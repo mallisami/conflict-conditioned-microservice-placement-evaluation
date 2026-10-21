@@ -28,6 +28,7 @@ These quick checks recompute retained **point estimates and accounting identitie
 
 - [Oracle plan ZIP](02_Methods_and_Configuration/02_Experiment_Plans/Oracle_Execution/ORACLE_PLAN.json.zip) — original 4,445,441-byte JSON restored under its original path.
 - [Stage-D packet plan ZIP](02_Methods_and_Configuration/02_Experiment_Plans/RQ2_Packet_Execution/STAGE_D_PLAN.json.zip) — original 6,209,838-byte JSON restored under its original path.
+- Recalculate the secondary RQ2 B5-versus-comparator effects, three-state weighted effect, and graph-size strata with `python3 00_START_HERE/verify_public_supporting_results.py`.
 - Verify both containers and original JSON hashes with `python3 00_START_HERE/verify_frozen_plan_archives.py`.
 - Recalculate selected primary graph-level paired percentile-bootstrap confidence intervals using `python3 00_START_HERE/recompute_public_bootstrap_cis.py --resamples 100000`.
 

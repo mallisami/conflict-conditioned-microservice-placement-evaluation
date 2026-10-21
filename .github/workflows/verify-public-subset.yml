@@ -19,6 +19,8 @@ jobs:
         run: python3 verify_public_subset.py
       - name: Recompute primary graph-level results
         run: python3 00_START_HERE/verify_public_graph_results.py
+      - name: Verify secondary RQ2 comparators and state diagnostics
+        run: python3 00_START_HERE/verify_public_supporting_results.py
       - name: Verify recovered frozen plans
         run: python3 00_START_HERE/verify_frozen_plan_archives.py
       - name: Independent paired graph-bootstrap smoke test

@@ -10,6 +10,10 @@ python3 00_START_HERE/verify_public_graph_results.py
 
 This checks the primary graph-level paired mean differences for RQ1, RQ2, original and fresh Kubernetes panels, and the RQ2 selection/win/loss/tie accounting. It uses public CSV tables and the Python standard library. It does **not** generate new simulation outcomes. Independently recalculate selected primary percentile-bootstrap intervals over paired graph identities with `python3 00_START_HERE/recompute_public_bootstrap_cis.py --resamples 100000`; historical bootstrap random draws and every secondary interval are not reproduced.
 
+### Public supporting results
+
+For six secondary RQ2 policy contrasts, B5-minus-B3 state transfer, the fixed three-state composite and exploratory graph-size effects, run `python3 00_START_HERE/verify_public_supporting_results.py`. This independently recalculates graph-level point estimates and does not purport to reproduce every historical signed-rank or bootstrap analysis.
+
 ## 2. Validate deposited source and result files
 
 ```bash
