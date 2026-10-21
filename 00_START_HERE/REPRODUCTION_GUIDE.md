@@ -1,5 +1,7 @@
 # Reproduction guide
 
+> **Public checkout status:** This guide describes the full independently verified offline reviewer archive. Original raw ZIP archives are **not yet deposited** in this public repository. Do not run the full-archive verifier against an incomplete checkout or interpret a missing-archive error as a failed experimental result.
+
 ## 1. Verify before analysis
 
 Run from the extracted release root:
