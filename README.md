@@ -1,48 +1,58 @@
 # Conflict-Conditioned Microservice Placement Evaluation
 
-**Raw evidence and third-party rights audit:** [RAW_DATA_AND_THIRD_PARTY_PROVENANCE.md](RAW_DATA_AND_THIRD_PARTY_PROVENANCE.md) documents the exact ten raw-study archive sizes and record counts, the limited content screening, the upstream GPL-2.0 simulator license, the external SNOB5G source, and the remaining public-release steps.
+**Reproducibility companion** to *Evaluating Conflict-Conditioned Ranking for Microservice Placement Under Shared Wireless Airtime* (research manuscript; no publication DOI assigned).
 
+This repository contains the frozen implementation, methods, selected experiment plans and graph-level outcome tables for a controlled comparison of **B5 (conflict-conditioned ranking)** versus **B3 (utilization-only ranking)** on the **same state-dependent hard-admissible placement set**. Outcomes are assessed separately for prediction, packet-level delivery, and Kubernetes shared-medium application completion. **The evidence does not establish improved mean executed performance for B5.**
 
-**Research artifact companion** for *Evaluating Conflict-Conditioned Ranking for Microservice Placement Under Shared Wireless Airtime* (Engineering Reports manuscript under consideration).
+## Start here — three reviewer checks
 
-The study compares a conflict-conditioned complete-placement ranking policy (B5) with a calibrated utilization-only baseline (B3) over **identical state-dependent hard-admissible placements**. It examines pointwise degradation prediction, modeled ns-3 shared-airtime packet delivery, and request completion on a Kubernetes shared-medium emulator. The prespecified policy-level results do **not** establish that B5 improves mean executed performance.
+1. **Recalculate the public primary results** without installing ns-3 or Kubernetes:
 
-## Reviewer navigation
+   ```bash
+   git clone https://github.com/mallisami/conflict-conditioned-microservice-placement-evaluation.git
+   cd conflict-conditioned-microservice-placement-evaluation
+   python3 00_START_HERE/verify_public_graph_results.py
+   ```
 
-| Directory | Contents |
+2. **Check the published-file integrity manifest** (separate from the full offline-archive verifier):
+
+   ```bash
+   python3 verify_public_subset.py
+   ```
+
+3. **Trace each outcome to its protocol and evidence** using the [experiment–artifact map](00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md), [reproduction guide](00_START_HERE/REPRODUCTION_GUIDE.md), and [data dictionary](00_START_HERE/DATA_DICTIONARY.md).
+
+These quick checks recompute retained **point estimates and accounting identities** and compare deposited files with their checksums. They do not rerun the original experiments, recompute every confidence interval, or validate the ten unpublished original raw-data archives.
+
+## Study results and direct evidence paths
+
+| Research question | What the public tables support | Open evidence |
+| --- | --- | --- |
+| **RQ1 — prediction** | Mean absolute error is higher for B5 in both in-distribution and shifted-traffic panels (60 graphs each) | [Prediction tables](05_Results_and_Analysis/01_RQ1_Prediction/) |
+| **RQ2 — packet delivery** | B5 minus B3 mean delivered fraction ≈ **−0.001980** on 200 graphs. Of 140 changed placements, 81 improve and 59 worsen; 60 outcomes are unchanged | [Selection and packet delivery](05_Results_and_Analysis/02_RQ2_Selection_and_Packet_Execution/) |
+| **RQ3 — application completion** | Original 40-graph Kubernetes comparison is inconclusive. Separate post-confirmatory 256-graph extension has B5 minus B3 mean completion ≈ **−0.005679** | [Original Kubernetes panel](05_Results_and_Analysis/07_Initial_Kubernetes_Experiment/) · [Fresh extension](05_Results_and_Analysis/08_Fresh_Kubernetes_RQ3/) |
+| **Supporting analyses** | Robustness, structured topologies, exhaustive-oracle attribution, measured-rate replay and development-stage audits | [All analysis folders](05_Results_and_Analysis/) |
+
+Graph identity is the independent analysis unit; original and post-confirmatory cohorts must not be pooled.
+
+## Repository directory guide
+
+The numeric prefixes are **frozen artifact-directory names from the verified experiment package**, not public release version numbers. They are kept to preserve executable paths, provenance and references.
+
+| Directory | Purpose |
 | --- | --- |
-| [`00_START_HERE/`](00_START_HERE/) | Reproduction guide, experiment-to-artifact map, data dictionary, and offline verifier |
-| [`02_Methods_and_Configuration/`](02_Methods_and_Configuration/) | Locked methodology, model calibration records, experiment plans, reproducibility scope |
-| [`03_Code/`](03_Code/) | Frozen confirmatory engine, test scripts, and separate Kubernetes extension |
-| [`05_Results_and_Analysis/`](05_Results_and_Analysis/) | Original derived numerical results and audit tables |
-| [`06_Environment_and_Execution/`](06_Environment_and_Execution/) | Execution-environment notes |
+| [`00_START_HERE/`](00_START_HERE/) | Reviewer navigation, study index, reproducibility guides and verification scripts |
+| [`02_Methods_and_Configuration/`](02_Methods_and_Configuration/) | Prespecified protocols, frozen coefficients, configurations, and selected plans |
+| [`03_Code/`](03_Code/) | Confirmatory research engine, WiGig/ns-3 source, tests, Kubernetes extension |
+| [`05_Results_and_Analysis/`](05_Results_and_Analysis/) | Public-derived graph-level outcomes and supporting diagnostic tables |
+| [`06_Environment_and_Execution/`](06_Environment_and_Execution/) | Execution-environment prerequisites |
 
-**Begin with:** [`00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md`](00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md) and [`00_START_HERE/REPRODUCTION_GUIDE.md`](00_START_HERE/REPRODUCTION_GUIDE.md).
+`01_Manuscript/` is intentionally excluded (submission materials are handled by the journal). `04_Raw_Experimental_Data/` is absent from this public checkout because the ten original study ZIPs have not yet been released. These gaps are **not missing experimental observations in the offline verified archive**.
 
-## Fast, public, data-light verification
+## Evidence availability and licensing
 
-The public graph-level CSV tables are sufficient to independently recompute the primary **mean paired differences and the RQ2 selection/win-loss accounting**, without downloading the multi-gigabyte original packet logs.
+See **[Data availability and reproducibility limits](DATA_AVAILABILITY.md)** for the exact included/excluded file classes, the ten-study raw archive inventory, the missing historical B3 calibration input, and the difference between lightweight result verification and a full simulator rerun. The [outstanding-file index](PUBLIC_DEFERRED_FILE_INDEX.csv) lists **only files actually absent** as of the public audit.
 
-```bash
-python 00_START_HERE/verify_public_graph_results.py
-```
+The adapted WiGig C++ simulator file [`evaluate_shared_airtime_boundary.cc`](03_Code/01_Confirmatory_Engine/simulator/evaluate_shared_airtime_boundary.cc) **is present**, with attribution and upstream GPL-2.0 license in [third-party notices](THIRD_PARTY_NOTICES.md). The upstream SNOB5G dataset is not redistributed. No blanket license is asserted for the entire repository.
 
-This standard-library-only check covers 60 in-distribution and 60 shifted RQ1 graph identities, 200 RQ2 graph identities, the original 40-graph high-load Kubernetes panel, the separate 256-graph fresh panel, and the 128-graph matched-stabilizer contrast. It does **not** recompute bootstrap confidence intervals or establish simulator bit-level reproducibility; for those stronger claims, use the full evidence release and original protocols.
-
-## Publication and verification scope
-
-This is a **publicly deposited subset** of the original verified reviewer archive. The ten original raw-study ZIP archives are **not in this repository**, and the public repository alone cannot perform the archive's complete raw-data integrity verification or independently reconstruct every original simulation. A public-subset checksum list is provided in [`PUBLIC_FILE_SHA256SUMS.txt`](PUBLIC_FILE_SHA256SUMS.txt), covering only the files actually deposited here. The original offline archive separately passed complete release-file hashes, ten study-archive checks, and 108,727 archived raw-record hashes. Those offline results must not be mistaken for a verifier pass of this partial public checkout.
-
-This repository does **not** distribute the external SNOB5G raw dataset. The frozen IMDEA Networks Institute / Hany Assasa C++ simulator file is **restored byte-for-byte** with the upstream WiGig GPL-2.0 license and explicit attribution in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). The original SNOB5G dataset, ten large raw-study ZIPs, and selected oversized frozen plans/indexes are not yet included; consult [`DATA_ACCESS_AND_EXCLUSIONS.md`](DATA_ACCESS_AND_EXCLUSIONS.md) and [`PUBLIC_DEFERRED_FILE_INDEX.csv`](PUBLIC_DEFERRED_FILE_INDEX.csv). Consequently, running every simulator stage from this checkout alone is not yet certified. No blanket license is asserted for the full repository.
-
-The manuscript and supplementary PDF are supplied to the journal separately; this repository hosts research artifacts, not the submission files. The historical B3 Stage-A `calibration_aggregated.csv` remains unrecovered and cannot be regenerated from the archived files. Original and post-confirmatory Kubernetes cohorts are separate. No external-scheduler superiority, physical concurrent 60-GHz experiment, or completed DeathStarBench run is claimed.
-
-## Research result guide
-
-- **RQ1:** B5 has higher mean absolute prediction error than B3 in both in-distribution and shifted-traffic panels (60 independent graph identities each).
-- **RQ2:** On 200 conflict-dense graphs, the mean B5 minus B3 delivered-fraction contrast is approximately **−0.001980**; 140 placements change, with 81 favorable switches, 59 unfavorable switches and 60 unchanged outcomes.
-- **RQ3:** The original 40-graph Kubernetes comparison was inconclusive. The *separately specified* post-confirmatory 256-graph panel showed a B5 minus B3 completion-fraction difference of approximately **−0.005679**.
-
-Read the methods, data dictionary, and archived result tables for precise estimands, protocol limitations, and uncertainty measures.
-
-**Status:** Study artifacts released for scientific inspection; original raw-study archive release and third-party redistribution permissions remain a separate access decision.
+**Citing this artifact:** Link to this repository alongside the manuscript's Data and Code Availability statement, describing it as a *public code, configuration, and derived-results deposit*, not a complete raw-data deposit. The manuscript and Supplementary Material are provided separately.

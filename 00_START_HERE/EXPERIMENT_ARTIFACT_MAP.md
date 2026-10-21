@@ -2,7 +2,7 @@
 
 > **Publication status:** The paths in this crosswalk describe the retained reviewer evidence; they are not guarantees that every raw ZIP archive has been published here. Check file availability before following a reproduction path. The manuscript is provided separately to the journal.
 
-Follow each reported result from its protocol/configuration through source code, the per-study raw-data archive, derived result table, and paper display. Raw paths listed inside the archives are relative to the corresponding study folder; use `RAW_DATA_FILE_INDEX.csv` to search those paths.
+Follow each reported result from its protocol/configuration through source code, the per-study raw-data archive, derived result table, and paper display. Raw paths listed inside the archives are relative to the corresponding study folder; the full offline archive contains `RAW_DATA_FILE_INDEX.csv` for searching those paths; that large per-file index is not in this public checkout.
 
 | Study / paper component | Governing method/configuration | Main code | Accepted raw archive | Derived results |
 |---|---|---|---|---|
@@ -17,8 +17,8 @@ Follow each reported result from its protocol/configuration through source code,
 | Initial high-load Kubernetes study | Stage-E configuration and frozen model locks | `03_Code/01_Confirmatory_Engine/src/run_stage_e.py` | `04_Raw_Experimental_Data/09_Initial_Kubernetes_Experiment.zip` | `05_Results_and_Analysis/07_Initial_Kubernetes_Experiment/` |
 | Fresh Kubernetes RQ3 extension | Fresh-RQ3 protocol, lock, and seed registry | `03_Code/02_RQ3_Fresh_Kubernetes_Extension/` | `04_Raw_Experimental_Data/10_Fresh_Kubernetes_RQ3.zip` | `05_Results_and_Analysis/08_Fresh_Kubernetes_RQ3/` |
 
-All ten study archives are listed in `RAW_DATA_INDEX.csv`. `09_Initial_Kubernetes_Experiment.zip` and `10_Fresh_Kubernetes_RQ3.zip` are separate studies and must not be pooled.
+All ten study archives are listed in [`RAW_DATA_INDEX.csv`](RAW_DATA_INDEX.csv), but their ZIP contents are not currently public in this repository. `09_Initial_Kubernetes_Experiment.zip` and `10_Fresh_Kubernetes_RQ3.zip` are separate studies and must not be pooled.
 
-## Manuscript source
+## Manuscript files
 
-`01_Manuscript/Main_Manuscript.pdf` and `01_Manuscript/Supplementary_Material.pdf` are built directly from the single-file LaTeX sources and figure assets in `01_Manuscript/LaTeX_Source/`, so the PDFs and sources cannot drift apart.
+Manuscript and Supplementary Material are maintained and submitted **separately**, not tracked in this repository. The paths `01_Manuscript/` refer only to the retained full offline reviewer archive. See [Data availability](../DATA_AVAILABILITY.md) for the exact boundary between public and offline evidence.

@@ -1,4 +1,4 @@
-name: Verify public reproducibility files
+name: Verify published research artifacts
 
 on:
   push:
@@ -13,7 +13,9 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout public research artifacts
+      - name: Checkout research artifacts
         uses: actions/checkout@v4
-      - name: Verify deposited file checksums
+      - name: Check published file SHA-256 values and manifest coverage
         run: python3 verify_public_subset.py
+      - name: Recompute primary graph-level results
+        run: python3 00_START_HERE/verify_public_graph_results.py

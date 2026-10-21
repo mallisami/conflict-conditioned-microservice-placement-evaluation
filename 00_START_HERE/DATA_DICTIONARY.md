@@ -6,11 +6,11 @@
 - **JSON:** frozen plans/configurations, graph/cell records, accepted-run metadata, and derived machine-readable summaries.
 - **`accepted.json`:** metadata and accepted output for the specific run/cell/replicate represented by its parent directory. It is an experimental result record, not an operational log.
 - **`SHA256SUMS.txt`:** release-level SHA-256 manifest. Each raw study ZIP also contains `__ARCHIVE_METADATA__/SHA256SUMS.txt`, a file-level manifest for the original raw records in that archive.
-- **`RAW_DATA_FILE_INDEX.csv`:** searchable inventory of each raw file with its archive, original relative path, size, SHA-256, type, and any graph/seed/method/replicate/attempt fields explicitly encoded in the path. Blank fields mean the path does not encode that value; the index does not infer missing metadata.
+- **`RAW_DATA_FILE_INDEX.csv` (offline archive only):** searchable inventory of each raw file with its archive, original relative path, size, SHA-256, type, and any graph/seed/method/replicate/attempt fields explicitly encoded in the path. Blank fields mean the path does not encode that value; the index does not infer missing metadata.
 
 ## Raw-data study archives
 
-The raw-data folder contains ten ZIP archives rather than tens of thousands of nested directories. Each ZIP preserves the original relative path structure. `RAW_DATA_INDEX.csv` lists each study, its purpose, raw file count, uncompressed byte count, and archive size. Extract one study with `python 00_START_HERE/unpack_raw_data.py --study <STUDY_NAME>`; use `--all` to extract all studies.
+The **complete offline reviewer release** contains ten ZIP archives rather than tens of thousands of nested directories. **Those ZIP archives are not deposited in this public GitHub checkout.** Each ZIP preserves the original relative path structure. `RAW_DATA_INDEX.csv` lists each study, its purpose, raw file count, uncompressed byte count, and archive size. Only after obtaining the complete offline archive, extract one study with `python 00_START_HERE/unpack_raw_data.py --study <STUDY_NAME>`; use `--all` to extract all studies.
 
 - `01_RQ1_Prediction_Panel.zip`: prediction panels and per-run records for RQ1.
 - `02_RQ2_Selection_Graphs.zip`: graph identities and selection decisions for RQ2.
