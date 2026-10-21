@@ -8,7 +8,7 @@ This guide separates **quick verification of publicly deposited results** from *
 python3 00_START_HERE/verify_public_graph_results.py
 ```
 
-This checks the primary graph-level paired mean differences for RQ1, RQ2, original and fresh Kubernetes panels, and the RQ2 selection/win/loss/tie accounting. It uses public CSV tables and the Python standard library. It does **not** generate new simulation outcomes or reconstruct every confidence interval.
+This checks the primary graph-level paired mean differences for RQ1, RQ2, original and fresh Kubernetes panels, and the RQ2 selection/win/loss/tie accounting. It uses public CSV tables and the Python standard library. It does **not** generate new simulation outcomes. Independently recalculate selected primary percentile-bootstrap intervals over paired graph identities with `python3 00_START_HERE/recompute_public_bootstrap_cis.py --resamples 100000`; historical bootstrap random draws and every secondary interval are not reproduced.
 
 ## 2. Validate deposited source and result files
 
@@ -29,7 +29,11 @@ The [experiment–artifact crosswalk](EXPERIMENT_ARTIFACT_MAP.md) connects each 
 | Original Kubernetes panel | [Execution cells](../05_Results_and_Analysis/07_Initial_Kubernetes_Experiment/STAGE_E_CELLS.csv) |
 | Fresh Kubernetes panel | [Fresh extension results](../05_Results_and_Analysis/08_Fresh_Kubernetes_RQ3/) |
 
-## 4. Full archived evidence (not included on GitHub)
+## 4. Recovered frozen execution plans
+
+Verify original JSON SHA-256s and compressed containers with `python3 00_START_HERE/verify_frozen_plan_archives.py`. Extract either ZIP from repository root using `python3 -m zipfile -e ZIPFILE .`. These are execution inputs, not the original execution logs.
+
+## 5. Full archived evidence (not included on GitHub)
 
 The complete offline reviewer archive has `04_Raw_Experimental_Data/` (ten ZIPs), an original top-level release manifest and a per-file raw index. **Do not run the original full-archive verifier against this public subset.**
 
@@ -42,7 +46,7 @@ python3 00_START_HERE/unpack_raw_data.py --study 02_RQ2_Selection_Graphs
 
 The original verifier performs archived-file and record integrity checks and selected point-estimate checks. Raw unpacking requires the specified ZIP archive. Neither command reruns ns-3 or the Kubernetes cluster.
 
-## 5. Experimental reruns (optional and environment dependent)
+## 6. Experimental reruns (optional and environment dependent)
 
 The frozen [confirmatory implementation](../03_Code/01_Confirmatory_Engine/) and [separate Kubernetes extension](../03_Code/02_RQ3_Fresh_Kubernetes_Extension/) include their own READMEs and scripts. Their frozen experiment plans, dependencies, model locks, resource needs, and any unavailable original inputs must be respected. Do not run `RUN_RQ3_COMPLETE.sh` to perform a routine data verification: it launches/resumes a resource-intensive experiment.
 

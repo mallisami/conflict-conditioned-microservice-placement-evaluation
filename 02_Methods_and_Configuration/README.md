@@ -10,6 +10,6 @@ Use this directory to identify the **exact methods and parameters** governing th
 | [`04_Model_Development_Inputs/`](04_Model_Development_Inputs/) | Preserved B4 development inputs used in model-selection history | Development provenance, **not held-out results** |
 | [`REPRODUCIBILITY_SCOPE.md`](REPRODUCIBILITY_SCOPE.md) | Public-versus-offline availability and methodological limits | Prevents misleading reproduction claims |
 
-**Important:** The original historical B3 Stage-A calibration CSV is not available, although the frozen B3 coefficients and downstream evaluation are retained. The public checkout does not include every large frozen execution plan; see the [outstanding-file index](../PUBLIC_DEFERRED_FILE_INDEX.csv) before following a full simulator rerun.
+**Important:** The original historical B3 Stage-A calibration CSV is not available, although the frozen B3 coefficients and downstream evaluation are retained. The exact oracle and packet-execution plans are now provided as [oracle ZIP](02_Experiment_Plans/Oracle_Execution/ORACLE_PLAN.json.zip) and [Stage-D ZIP](02_Experiment_Plans/RQ2_Packet_Execution/STAGE_D_PLAN.json.zip), with original JSON paths and digests verified. Raw execution logs are separately retained; see the [outstanding-file index](../PUBLIC_DEFERRED_FILE_INDEX.csv) for remaining omissions.
 
 For paper-outcome mappings, start with [experiment–artifact map](../00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md). For file-access terms and limitations, see [data availability](../DATA_AVAILABILITY.md).

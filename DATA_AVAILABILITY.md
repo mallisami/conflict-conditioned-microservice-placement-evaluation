@@ -7,10 +7,10 @@ This page is the single public reference for **what a reviewer can reproduce fro
 - Source implementation for the original confirmatory study and separate fresh Kubernetes extension, including the [adapted WiGig/ns-3 source](03_Code/01_Confirmatory_Engine/simulator/evaluate_shared_airtime_boundary.cc).
 - Governing protocols, frozen parameter/model locks, selected configuration and experiment-plan inputs.
 - Derived graph-level RQ1 and RQ2 results, initial Kubernetes result tables, and the separate fresh-RQ3 extension result tables.
-- Public verification scripts: `python3 00_START_HERE/verify_public_graph_results.py` for point estimates and `python3 verify_public_subset.py` for indexed published-file SHA-256 hashes.
+- Public verification: point estimates (`00_START_HERE/verify_public_graph_results.py`), independently seeded paired graph bootstrap confidence intervals (`00_START_HERE/recompute_public_bootstrap_cis.py`), original frozen plan SHA-256 verification (`00_START_HERE/verify_frozen_plan_archives.py`), and all public-file SHA-256 checks (`verify_public_subset.py`).
 - [Source-to-evidence crosswalk](00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md), [public file checksum manifest](PUBLIC_FILE_SHA256SUMS.txt), [environment notes](06_Environment_and_Execution/ENVIRONMENT_NOTES.md).
 
-**These commands do not require large packet logs**, but only verify recorded results and the published file set. They do not execute the simulator, refit historical models or independently recalculate all intervals.
+**These commands do not require large packet logs**. They check recorded results, recompute selected primary graph-bootstrap intervals with a disclosed seed, and verify public-file integrity. They do not rerun simulation, refit historical models, reconstruct every secondary interval or reproduce the archived historical bootstrap random draws.
 
 ## Original raw-study archives not on GitHub
 
@@ -35,7 +35,7 @@ Total: **108,727 records** in approximately **8.96 GiB of study ZIPs**. Offline 
 
 - The original Stage-A B3 calibration input `calibration_aggregated.csv` was **not recovered**. Frozen coefficients and downstream audit evidence are retained, but re-estimating historical baseline parameters from the missing source is not certified.
 - This GitHub checkout does not include the original ten raw ZIPs, the complete per-file raw index, or the complete release manifest. The full offline verifier `00_START_HERE/verify_release.py` requires these assets and **is not intended for this checkout**.
-- A small number of original frozen plan payloads, including `ORACLE_PLAN.json` and `STAGE_D_PLAN.json`, are not deposited; see the [precise outstanding-file index](PUBLIC_DEFERRED_FILE_INDEX.csv). The RQ1 plan, replay plan and structured-topology plan **are already present** and must not be described as missing.
+- The two previously omitted original plan payloads are now deposited as losslessly compressed [oracle ZIP](02_Methods_and_Configuration/02_Experiment_Plans/Oracle_Execution/ORACLE_PLAN.json.zip) and [Stage-D ZIP](02_Methods_and_Configuration/02_Experiment_Plans/RQ2_Packet_Execution/STAGE_D_PLAN.json.zip). The original JSON bytes, paths and SHA-256 hashes are verified by `00_START_HERE/verify_frozen_plan_archives.py`. The RQ1, replay, and structured-topology plans were already present; see the [remaining outstanding-file index](PUBLIC_DEFERRED_FILE_INDEX.csv).
 - The dataset-sensitive measured-rate replay uses frozen vectors derived from external [SNOB5GData](https://github.com/nap-it/SNOB5GData). The complete upstream measurement dataset is **not** redistributed. A path-sanitized derived vector companion is included in this repository; the original source metadata remains in the offline evidence.
 - The original 40-graph Kubernetes study and fresh 256-graph post-confirmatory study are **separate** and must not be pooled.
 - No native TraDE/Diktyo scheduler performance trials, completed DeathStarBench execution, or concurrent physical 60-GHz radio validation are claimed.

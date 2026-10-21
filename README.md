@@ -22,7 +22,16 @@ This repository contains the frozen implementation, methods, selected experiment
 
 3. **Trace each outcome to its protocol and evidence** using the [experiment–artifact map](00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md), [reproduction guide](00_START_HERE/REPRODUCTION_GUIDE.md), and [data dictionary](00_START_HERE/DATA_DICTIONARY.md).
 
-These quick checks recompute retained **point estimates and accounting identities** and compare deposited files with their checksums. They do not rerun the original experiments, recompute every confidence interval, or validate the ten unpublished original raw-data archives.
+These quick checks recompute retained **point estimates and accounting identities** and compare deposited files with their checksums. They do not rerun the original experiments or validate the ten unpublished original raw-data archives. The separate independent bootstrap check recomputes selected primary intervals, not all historical secondary intervals.
+
+## Recovered frozen execution plans and bootstrap verification
+
+- [Oracle plan ZIP](02_Methods_and_Configuration/02_Experiment_Plans/Oracle_Execution/ORACLE_PLAN.json.zip) — original 4,445,441-byte JSON restored under its original path.
+- [Stage-D packet plan ZIP](02_Methods_and_Configuration/02_Experiment_Plans/RQ2_Packet_Execution/STAGE_D_PLAN.json.zip) — original 6,209,838-byte JSON restored under its original path.
+- Verify both containers and original JSON hashes with `python3 00_START_HERE/verify_frozen_plan_archives.py`.
+- Recalculate selected primary graph-level paired percentile-bootstrap confidence intervals using `python3 00_START_HERE/recompute_public_bootstrap_cis.py --resamples 100000`.
+
+These are losslessly compressed *input plans*, not packet/oracle execution outcomes. ZIPs can be extracted at repository root using `python3 -m zipfile -e ZIPFILE .`. Independent bootstrap results use a published RNG seed; they do not claim identical historical random draws or reconstruct all secondary intervals.
 
 ## Study results and direct evidence paths
 
