@@ -1,5 +1,7 @@
 # Experiment-to-artifact map
 
+> **Publication status:** The paths in this crosswalk describe the retained reviewer evidence; they are not guarantees that every raw ZIP archive has been published here. Check file availability before following a reproduction path. The manuscript is provided separately to the journal.
+
 Follow each reported result from its protocol/configuration through source code, the per-study raw-data archive, derived result table, and paper display. Raw paths listed inside the archives are relative to the corresponding study folder; use `RAW_DATA_FILE_INDEX.csv` to search those paths.
 
 | Study / paper component | Governing method/configuration | Main code | Accepted raw archive | Derived results |
