@@ -24,6 +24,12 @@ This repository contains the frozen implementation, methods, selected experiment
 
 These quick checks recompute retained **point estimates and accounting identities** and compare deposited files with their checksums. They do not rerun the original experiments or validate the ten unpublished original raw-data archives. The separate independent bootstrap check recomputes selected primary intervals, not all historical secondary intervals.
 
+## Full original raw-data backup (not this GitHub ZIP)
+
+The **separate** author-controlled full reviewer backup is **417,004,855 bytes (398 MiB compressed)**, containing ten original raw-study ZIP archives with 108,727 indexed records, plus the updated manuscript, code, frozen experiments and results. GitHub does **not** host that full archive.
+
+For the exact SHA-256, checksums of all ten original study archives, verification instructions and current access restrictions, see [full reviewer evidence guide](00_START_HERE/REVIEWER_FULL_EVIDENCE.md). The full archive has not been cleared for public distribution or approved for a particular confidential journal transfer route.
+
 ## Recovered frozen execution plans and bootstrap verification
 
 - [Oracle plan ZIP](02_Methods_and_Configuration/02_Experiment_Plans/Oracle_Execution/ORACLE_PLAN.json.zip) — original 4,445,441-byte JSON restored under its original path.

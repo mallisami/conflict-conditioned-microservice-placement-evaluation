@@ -12,6 +12,12 @@ This page is the single public reference for **what a reviewer can reproduce fro
 
 **These commands do not require large packet logs**. They check recorded results, recompute selected primary graph-bootstrap intervals with a disclosed seed, and verify public-file integrity. They do not rerun simulation, refit historical models, reconstruct every secondary interval or reproduce the archived historical bootstrap random draws.
 
+## Full offline reviewer backup and public integrity metadata
+
+The 22 October 2026 author-controlled reviewer backup contains the ten original raw ZIPs (108,727 records), source, configuration, current manuscript and derived results. It is **417,004,855 bytes** in compressed form and has SHA-256 `4e683de510c5bb45c5687c2f78b14fe10849ca8023009e638b749127ceae2752`. The original raw study ZIP SHA-256 hashes and verification instructions are publicly deposited [here](00_START_HERE/REVIEWER_FULL_EVIDENCE.md).
+
+**The raw files themselves are not available from this public repository.** Public redistribution and journal reviewer access remain subject to author/third-party rights, metadata screening and approval of a transfer route. A GitHub source ZIP is not an equivalent full raw-data deposit.
+
 ## Original raw-study archives not on GitHub
 
 The complete offline evidence release contains the following ten ZIP archives. The listed sizes and record counts come from the archived inventory; **none is currently downloadable from this GitHub repository**.
