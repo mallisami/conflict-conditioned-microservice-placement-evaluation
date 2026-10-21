@@ -1,0 +1,19 @@
+name: Verify public reproducibility files
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout public research artifacts
+        uses: actions/checkout@v4
+      - name: Verify deposited file checksums
+        run: python3 verify_public_subset.py
