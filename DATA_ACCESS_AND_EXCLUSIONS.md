@@ -1,5 +1,8 @@
 # Data availability, license boundaries and repository exclusions
 
+**Additional source-verified disposition:** The upstream source of the excluded WiGig C++ simulator example is now identified as the GPL-2.0-licensed WiGig ns-3 project, tag `v0.5`. Redistribution is not categorically barred; applicable license, modification, and contributor obligations must be followed. A content-class inventory and clearly bounded raw-output screening are documented in [RAW_DATA_AND_THIRD_PARTY_PROVENANCE.md](RAW_DATA_AND_THIRD_PARTY_PROVENANCE.md). The ten original raw-data ZIPs remain unavailable in this public checkout.
+
+
 The complete frozen reviewer archive was verified offline and is not equivalent to this repository's partial, rights-screened public deposit. This document records the **actual** exclusions instead of suggesting every input is publicly downloadable.
 
 1. **Raw experimental results:** Ten original study-level ZIP archives are retained separately. The corresponding public release has not yet been approved for redistribution. Their inner 108,727 record checks passed offline; they are not included here.
