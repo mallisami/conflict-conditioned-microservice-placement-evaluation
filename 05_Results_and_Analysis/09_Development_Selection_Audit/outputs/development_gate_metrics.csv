@@ -1,0 +1,7 @@
+subset,rows,graph_state_groups,B3_MAE,B4_MAE,B5_OOF_MAE,interpretation
+dense_oracle_composite_vs_state_loss,1038,10,0.07663005419646358,0.07113803056923468,,Invalid semantics: composite score vs conflict-dense loss
+dense_oracle_state_specific,1038,10,0.056623762947444374,0.05542422488542287,,Aligned state-specific predictions and conflict-dense target
+selected_state_specific,1090,350,0.01967970238106443,0.03133176761811102,,Aligned state-specific selected-placement predictions
+pooled_historical_lock_mixed_semantics,2128,360,0.04745905632109465,0.05074854437716476,,Reproduces lock values; mixes composite and state-specific predictions
+pooled_corrected_state_specific,2128,360,0.03770034846560502,0.04308363352199715,,"Corrected state-specific baselines on same 2,128 rows"
+B5_selected_primary_OOF_CV,2128,360,,,0.0359344200608689,"Archived OOF metric selected through the same CV search; post-selection, not nested independent validation"

@@ -1,0 +1,71 @@
+{
+  "protocol_id": "paper2-b5-confirmatory-stage-c-v1.0",
+  "target_current_worst_utilization": 0.95,
+  "sizes": [
+    {
+      "label": "n8",
+      "replicas": 8,
+      "nodes_per_rack": 1,
+      "move_budget": 2,
+      "seed_start": 91001,
+      "seed_end": 91050
+    },
+    {
+      "label": "n12",
+      "replicas": 12,
+      "nodes_per_rack": 2,
+      "move_budget": 3,
+      "seed_start": 92001,
+      "seed_end": 92050
+    },
+    {
+      "label": "n16",
+      "replicas": 16,
+      "nodes_per_rack": 2,
+      "move_budget": 4,
+      "seed_start": 93001,
+      "seed_end": 93050
+    },
+    {
+      "label": "n24",
+      "replicas": 24,
+      "nodes_per_rack": 2,
+      "move_budget": 3,
+      "seed_start": 94001,
+      "seed_end": 94050
+    }
+  ],
+  "planning_scenarios": [
+    "conflict-dense",
+    "partial-blockage",
+    "persistent-degradation"
+  ],
+  "primary_execution_state": "conflict-dense",
+  "packet_rng_runs": [
+    811,
+    812,
+    813
+  ],
+  "secondary_execution_states": [
+    "persistent-degradation",
+    "partial-blockage"
+  ],
+  "development_seed_ranges_excluded": {
+    "n8": [
+      71001,
+      71030
+    ],
+    "n12": [
+      72001,
+      72030
+    ],
+    "n16": [
+      73001,
+      73030
+    ],
+    "n24": [
+      74001,
+      74030
+    ]
+  }
+}

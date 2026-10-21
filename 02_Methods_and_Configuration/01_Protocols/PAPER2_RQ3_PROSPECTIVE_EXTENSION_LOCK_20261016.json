@@ -1,0 +1,214 @@
+{
+  "b3_coefficient_recovery": {
+    "coefficients": {
+      "0.25": [
+        0.0,
+        0.0,
+        0.11232846839750812
+      ],
+      "0.5": [
+        0.0,
+        0.0,
+        0.09753362448940547
+      ],
+      "0.75": [
+        0.0,
+        0.0,
+        0.22432263298114677
+      ]
+    },
+    "historical_final_recorded_file_sha256": "b67b7b39ea5c247a07506d433fc3aaac145823c56692d58508bd56b48055e486",
+    "interpretation": "Byte hashes differ, but scoring payload is verified equivalent against final retained predictions. No scientific coefficient mismatch.",
+    "maximum_absolute_prediction_error": 2.7755575615628914e-17,
+    "prediction_errors_gt_1e-12": 0,
+    "prediction_errors_gt_1e-15": 0,
+    "recovered_file": "frozen_coefficients.json",
+    "recovered_file_sha256": "dff395f493c66880612e63b5cdc7bf970c17d29f1f65a73e4ea4f40a36d53e2c",
+    "stage_c_graph_files_checked": 200,
+    "status": "VERIFIED_SCIENTIFIC_PAYLOAD_EQUIVALENT",
+    "stored_b3_group_predictions_checked": 13266
+  },
+  "b3_stabilized_rule": {
+    "absolute_near_margin": 0.002833387432321216,
+    "refit_or_retuning_allowed": false,
+    "score": "frozen B3_U_ONLY",
+    "within_near_set_order": [
+      "frozen JSA",
+      "relocation_count",
+      "deterministic_placement_key"
+    ]
+  },
+  "bootstrap_resamples": 100000,
+  "combined_original_pair": {
+    "cells": 768,
+    "estimand": "B5_COMPLETE - B3_STRICT scheduled-request completion",
+    "fresh_n": 256,
+    "methods": [
+      "B3_STRICT",
+      "B5_COMPLETE"
+    ]
+  },
+  "date": "2026-10-16",
+  "forbidden": [
+    "early stopping by outcome",
+    "outcome-driven graph addition or replacement",
+    "new load tuning",
+    "additional old-graph repeats as inferential units",
+    "model or margin refitting on new outcomes",
+    "DeathStarBench in this extension",
+    "new physical 60-GHz claim in this extension"
+  ],
+  "inferential_unit": "graph_identity",
+  "load": "2x_high",
+  "mechanism_panel": {
+    "cells": 768,
+    "main_inference_cells": 512,
+    "methods": [
+      "B3_STRICT",
+      "B3_STABILIZED",
+      "B5_NOTIE",
+      "B5_COMPLETE"
+    ],
+    "primary_estimand": "B5_COMPLETE - B3_STABILIZED scheduled-request completion",
+    "repeatability_extra_cells": 256,
+    "secondary_estimands": [
+      "B3_STABILIZED - B3_STRICT completion",
+      "B5_COMPLETE - B5_NOTIE completion",
+      "(B5_COMPLETE-B5_NOTIE) - (B3_STABILIZED-B3_STRICT) completion"
+    ],
+    "seeds": {
+      "end": 99128,
+      "n": 128,
+      "start": 99001
+    }
+  },
+  "nested_repeats": "one main-inference execution per graph-method; +2 diagnostic repeats on 64 preselected graph identities",
+  "original_rq3_unchanged": true,
+  "performance_trials_executed_under_extension": 0,
+  "practical_completion_threshold": 0.005,
+  "pre_science_provenance_gate": {
+    "historical_final_recorded_file_sha256": "b67b7b39ea5c247a07506d433fc3aaac145823c56692d58508bd56b48055e486",
+    "interpretation": "Byte hashes differ but the B3 scoring payload is verified scientifically equivalent; no refit or reconstruction is permitted.",
+    "name": "B3_COEFFICIENT_RECOVERY_AND_EQUIVALENCE",
+    "recovered_file": "frozen_coefficients.json",
+    "recovered_file_sha256": "dff395f493c66880612e63b5cdc7bf970c17d29f1f65a73e4ea4f40a36d53e2c",
+    "scientific_equivalence_evidence": {
+      "maximum_absolute_prediction_error": 2.7755575615628914e-17,
+      "prediction_errors_gt_1e-12": 0,
+      "prediction_errors_gt_1e-15": 0,
+      "stage_c_graph_files_checked": 200,
+      "stored_b3_group_predictions_checked": 13266
+    },
+    "status": "RESOLVED_BEFORE_SCIENCE"
+  },
+  "precision_panel": {
+    "cells": 384,
+    "main_inference_cells": 256,
+    "methods": [
+      "B3_STRICT",
+      "B5_COMPLETE"
+    ],
+    "repeatability_extra_cells": 128,
+    "seeds": {
+      "end": 99256,
+      "n": 128,
+      "start": 99129
+    }
+  },
+  "primary_analysis_replicate": 1,
+  "project": "MAPE Paper II",
+  "repeatability_panel": {
+    "additional_replicates": [
+      2,
+      3
+    ],
+    "extra_cells": 384,
+    "n_graphs": 64,
+    "panel_a_seeds": [
+      99002,
+      99003,
+      99009,
+      99013,
+      99014,
+      99015,
+      99022,
+      99023,
+      99024,
+      99025,
+      99026,
+      99030,
+      99034,
+      99035,
+      99045,
+      99046,
+      99061,
+      99062,
+      99070,
+      99074,
+      99075,
+      99091,
+      99093,
+      99095,
+      99098,
+      99100,
+      99107,
+      99110,
+      99111,
+      99115,
+      99117,
+      99124
+    ],
+    "panel_b_seeds": [
+      99131,
+      99134,
+      99137,
+      99145,
+      99152,
+      99154,
+      99156,
+      99161,
+      99166,
+      99168,
+      99169,
+      99170,
+      99176,
+      99177,
+      99189,
+      99191,
+      99192,
+      99194,
+      99195,
+      99197,
+      99198,
+      99199,
+      99204,
+      99206,
+      99220,
+      99224,
+      99230,
+      99239,
+      99241,
+      99247,
+      99248,
+      99249
+    ],
+    "role": "repeatability diagnostic only; primary and secondary treatment-effect estimates use replicate 1 only",
+    "selection": "32 outcome-blind SHA-256-ranked graph identities from each panel",
+    "selection_salt": "PAPER2_RQ3_REPEATABILITY_SUBSET_V1_20261016"
+  },
+  "science_run_authorization_condition": "authorized only after immutable-input verification, historical selector reproduction, fresh-selection verification, frozen 1152-cell run-plan verification, repeatability-subset lock verification, and live cluster preflight all pass",
+  "science_run_authorized": false,
+  "science_run_authorized_after_run_package_preflight": true,
+  "status": "FROZEN_PRE_OUTCOME__HYBRID_REPEATABILITY__READY_FOR_RUN_PACKAGE",
+  "structural_preflight": {
+    "admissible_set_max": 122,
+    "admissible_set_mean": 93.78125,
+    "admissible_set_min": 23,
+    "performance_outcomes_observed": 0,
+    "reconstruct_success": 256,
+    "seeds_checked": 256,
+    "with_at_least_one_hard_admissible_placement": 256
+  },
+  "total_planned_kubernetes_cells": 1152,
+  "track": "POST_CONFIRMATORY_RQ3_MECHANISM_PRECISION_HYBRID_REPEATABILITY_EXTENSION"
+}

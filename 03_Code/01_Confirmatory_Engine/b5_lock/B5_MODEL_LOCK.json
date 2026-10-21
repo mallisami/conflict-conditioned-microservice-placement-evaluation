@@ -1,0 +1,124 @@
+{
+  "cv_seed": 20261009,
+  "dense_oracle_graphs": 10,
+  "development_baselines": {
+    "B1": {
+      "strict_selection_regret": 0.004482391433993059
+    },
+    "B3": {
+      "mae": 0.047459056321094664,
+      "strict_selection_regret": 0.0018510651339291443
+    },
+    "B4": {
+      "mae": 0.05074854437716476,
+      "strict_selection_regret": 0.0011698364338995793
+    }
+  },
+  "development_gate": {
+    "passed": true,
+    "required_primary_cv_mae_le_B4": 0.05074854437716476,
+    "required_primary_oof_near_regret_le_B4_strict": 0.0011698364338995793
+  },
+  "development_graph_state_groups": 360,
+  "development_only": true,
+  "development_only_note": "All historical B4 outcomes are development evidence. No development graph/shape/seed may be counted as B5 confirmatory evidence.",
+  "development_rows": 2128,
+  "development_sources": {
+    "B4_ORACLE_CANDIDATES.csv": "2689e7271a6a0ad26edc69d0519d52e43358ef97992f8a1cb6bd475cca1d1810",
+    "B4_RANDOM_GRAPH_SELECTIONS.csv": "259334d23415bd45d59f1a344a12e458627494393f74b8c9764ac5ee4390f7b9",
+    "B4_STAGE_D_GRAPH_METHOD_STATE.csv": "03784c84d3230d1a55b3531e6fe4169c6d89def3704105ec5ac41cec7a6999ce",
+    "B4_STRUCTURED_GRAPH_METHOD.csv": "b80de334c3ce2793ae20e5828727de9f195043bac3f68b84f83f0061887319ed"
+  },
+  "hyperparameter_selection": {
+    "cv_mae": 0.0359344200608689,
+    "cv_strict_selection_regret": 0.001802098572433097,
+    "gamma": 1e-06,
+    "lambda": 0.5,
+    "tau": 0.01
+  },
+  "model_id": "B5_conflict_conditioned_decision_aware_v1.0",
+  "models": {
+    "B5_CONFLICT_RANK": {
+      "coefficient_constraints": "intercept free; every exposure coefficient non-negative",
+      "coefficients": [
+        -0.027200487777622087,
+        0.180611274806331
+      ],
+      "feature_names": [
+        "intercept",
+        "u_pair_interaction"
+      ],
+      "feature_set": "conflict",
+      "gamma": 1e-06,
+      "lambda": 0.5,
+      "tau": 0.01
+    },
+    "B5_GLOBAL_RANK": {
+      "coefficient_constraints": "intercept free; every exposure coefficient non-negative",
+      "coefficients": [
+        -0.05562289891783686,
+        0.21971192273366227
+      ],
+      "feature_names": [
+        "intercept",
+        "u_global_pair_interaction"
+      ],
+      "feature_set": "global",
+      "gamma": 1e-06,
+      "lambda": 0.5,
+      "tau": 0.02
+    },
+    "B5_MAE_ONLY": {
+      "coefficient_constraints": "intercept free; every exposure coefficient non-negative",
+      "coefficients": [
+        -0.02625528851819957,
+        0.17696500935453754
+      ],
+      "feature_names": [
+        "intercept",
+        "u_pair_interaction"
+      ],
+      "feature_set": "conflict",
+      "gamma": 1e-06,
+      "lambda": 0.0,
+      "tau": 0.01
+    }
+  },
+  "pair_weight_scale": 0.005,
+  "pointwise_huber_delta": 0.01,
+  "selection": {
+    "candidate_grid": [
+      {
+        "near_margin": 0.0,
+        "oof_mean_selection_regret": 0.001653885662540544,
+        "quantile": 0.0
+      },
+      {
+        "near_margin": 2.4906226013721168e-05,
+        "oof_mean_selection_regret": 0.001653885662540544,
+        "quantile": 0.1
+      },
+      {
+        "near_margin": 0.002833387432321216,
+        "oof_mean_selection_regret": 0.0011250596781460325,
+        "quantile": 0.25
+      },
+      {
+        "near_margin": 0.005,
+        "oof_mean_selection_regret": 0.0013223280812613301,
+        "quantile": 0.5
+      },
+      {
+        "near_margin": 0.005,
+        "oof_mean_selection_regret": 0.0013223280812613301,
+        "quantile": 0.75
+      }
+    ],
+    "near_margin": 0.002833387432321216,
+    "near_margin_quantile": 0.25,
+    "oof_selection_regret": 0.0011250596781460325,
+    "same_margin_applied_to_feature/training ablations": true,
+    "tie_break": "B1_MAPE_CAP_WS objective, then moves, then placement key; only inside frozen B5 near-margin"
+  },
+  "status": "FROZEN_PRE_CONFIRMATION"
+}

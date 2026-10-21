@@ -1,0 +1,72 @@
+{
+  "protocol_id": "paper2-contention-shape-stage-a-v1.4",
+  "resource_shares": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "utilization_levels": [
+    0.6,
+    0.75,
+    0.85,
+    0.95,
+    1.0
+  ],
+  "active_stream_counts": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "dirichlet_alpha": [
+    0.3,
+    1.0,
+    5.0
+  ],
+  "shape_replicates_per_cell": 4,
+  "calibration_rep_indices": [
+    0,
+    1
+  ],
+  "holdout_rep_indices": [
+    2,
+    3
+  ],
+  "science_rng_runs": [
+    701,
+    702,
+    703
+  ],
+  "num_streams": 6,
+  "qd_channel_folder": "DenseScenario",
+  "phy_mode": "DMG_MCS9",
+  "packet_size_bytes": 1448,
+  "socket_type": "ns3::UdpSocketFactory",
+  "simulation_seconds": 5.0,
+  "traffic_start_seconds": 2.0,
+  "minimum_association_lead_ms": 250,
+  "wigig_commit": "f3404236d05eb1da1cab80eec06c56ea8ab43f7d",
+  "bootstrap_resamples": 100000,
+  "bootstrap_seed": 20261006,
+  "solo_calibration_rng_runs": [
+    301,
+    302,
+    303
+  ],
+  "solo_calibration_offer_mbps": 6000.0,
+  "max_cell_attempts": 2,
+  "cell_timeout_seconds": 300,
+  "min_results_free_gib": 6.0,
+  "max_science_rate_mbps_per_stream": 3000.0,
+  "run_order_seed": 20261007,
+  "smoke_rng_run": 991301,
+  "smoke_rate_mbps_per_stream": 5.0,
+  "duty_gate_rng_run": 991302,
+  "duty_gate_offer_mbps": 6000.0,
+  "duty_gate_ratio_rule": "lower=max(0.05,0.5*s); upper=min(0.95,1.5*s)",
+  "base_image": "mape-cap-ws-wigig-base:paper2-v1.4",
+  "experiment_image": "mape-cap-ws-paper2-stagea:v1.4",
+  "parallel_workers": 4,
+  "identity_balance_rule": "Within every (m, alpha) cell, holdout reps reuse the same two active-STA subsets as calibration reps, with independent Dirichlet seeds. Across alpha strata the subset pairs rotate to cover STA identities."
+}

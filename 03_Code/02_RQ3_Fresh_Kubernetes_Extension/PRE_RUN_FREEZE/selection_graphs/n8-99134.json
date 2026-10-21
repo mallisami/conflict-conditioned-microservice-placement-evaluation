@@ -1,0 +1,824 @@
+{
+  "b3_coefficient_sha256": "dff395f493c66880612e63b5cdc7bf970c17d29f1f65a73e4ea4f40a36d53e2c",
+  "b5_lock_sha256": "67ed2d21f92bfe0a2df6dde94d8eb52d586c5d3730932ca9750261c7029c5aec",
+  "elapsed_seconds": 0.045968055725097656,
+  "n_admissible": 107,
+  "near_margin": 0.002833387432321216,
+  "no_admissible_placement": false,
+  "payload_scale": 33.676908981131156,
+  "seed": 99134,
+  "selections": {
+    "B3_STABILIZED": {
+      "b1_tiebreak_objective": 28890.65,
+      "b5": {
+        "state_predictions": {
+          "conflict-dense": {
+            "B5_CONFLICT_RANK": 0.02761307506424753,
+            "B5_GLOBAL_RANK": 0.011057286451451327,
+            "B5_MAE_ONLY": 0.027451672309513776
+          },
+          "partial-blockage": {
+            "B5_CONFLICT_RANK": 0.0,
+            "B5_GLOBAL_RANK": 0.0,
+            "B5_MAE_ONLY": 0.0
+          },
+          "persistent-degradation": {
+            "B5_CONFLICT_RANK": 0.024939312014899066,
+            "B5_GLOBAL_RANK": 0.04549959987267808,
+            "B5_MAE_ONLY": 0.024831888447475598
+          }
+        }
+      },
+      "contention": {
+        "conflict-dense": {
+          "groups": {
+            "cg-shared": {
+              "U": 0.4430938583420337,
+              "bits": 9720756797.499779,
+              "hhi": 0.315068021267097,
+              "m": 5,
+              "n_eff": 3.173917797110409,
+              "pairs": {
+                "rack-a>rack-b": 0.31809579286131207,
+                "rack-a>rack-c": 1.0510009308251027,
+                "rack-b>rack-a": 0.43060076737105746,
+                "rack-b>rack-c": 1.798238605065097,
+                "rack-c>rack-b": 3.0484717790079356
+              },
+              "pred_A1": 0.046547193208647995,
+              "pred_B3": 0.022053691650020652,
+              "pred_B4": 0.054167798687174445,
+              "resource_share": 0.25
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.046547193208647995,
+            "B3_U_ONLY": 0.022053691650020652,
+            "B4_FULL_SHAPE": 0.054167798687174445
+          },
+          "total_cross_bits": 9720756797.499779,
+          "weight": 0.28571428571428575
+        },
+        "partial-blockage": {
+          "groups": {
+            "cg-ab": {
+              "U": 0.010996119018168939,
+              "bits": 1057998083.195566,
+              "hhi": 0.5174255451356097,
+              "m": 2,
+              "n_eff": 1.9326452074141693,
+              "pairs": {
+                "rack-a>rack-b": 0.20122457396979998,
+                "rack-b>rack-a": 0.2936007818478023
+              },
+              "pred_A1": 0.000770522359137999,
+              "pred_B3": 2.7123888944087033e-05,
+              "pred_B4": 0.0011794844679594045,
+              "resource_share": 0.75
+            },
+            "cg-ac": {
+              "U": 0.07551718513001002,
+              "bits": 1216670207.5510635,
+              "hhi": 1.0,
+              "m": 1,
+              "n_eff": 1.0,
+              "pairs": {
+                "rack-a>rack-c": 3.3982733308504507
+              },
+              "pred_A1": 0.0007367649635280594,
+              "pred_B3": 0.0012792772619550994,
+              "pred_B4": 0.00014181376790619546,
+              "resource_share": 0.75
+            },
+            "cg-bc": {
+              "U": 0.07983972742394647,
+              "bits": 7446088506.75315,
+              "hhi": 0.5123369111285304,
+              "m": 2,
+              "n_eff": 1.9518406311918626,
+              "pairs": {
+                "rack-b>rack-c": 1.5142180575251531,
+                "rack-c>rack-b": 2.078569676552438
+              },
+              "pred_A1": 0.006386862695698604,
+              "pred_B3": 0.0014299181707210036,
+              "pred_B4": 0.008745369456441719,
+              "resource_share": 0.75
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.005068407439783219,
+            "B3_U_ONLY": 0.0012583848218565982,
+            "B4_FULL_SHAPE": 0.006845066621430847
+          },
+          "total_cross_bits": 9720756797.499779,
+          "weight": 0.4285714285714286
+        },
+        "persistent-degradation": {
+          "groups": {
+            "cg-ab": {
+              "U": 0.07757077068897592,
+              "bits": 1057998083.195566,
+              "hhi": 0.6061050175329427,
+              "m": 2,
+              "n_eff": 1.649879098626087,
+              "pairs": {
+                "rack-a>rack-b": 0.6275522616048838,
+                "rack-b>rack-a": 1.6995708590643939
+              },
+              "pred_A1": 0.00220523463839804,
+              "pred_B3": 0.0005868817114652475,
+              "pred_B4": 0.0031155081378159556,
+              "resource_share": 0.5
+            },
+            "cg-ac": {
+              "U": 0.11327577769501503,
+              "bits": 1216670207.5510635,
+              "hhi": 1.0,
+              "m": 1,
+              "n_eff": 1.0,
+              "pairs": {
+                "rack-a>rack-c": 3.3982733308504507
+              },
+              "pred_A1": 0.000682923461550338,
+              "pred_B3": 0.0012514931260443189,
+              "pred_B4": 0.0002668047755549529,
+              "resource_share": 0.5
+            },
+            "cg-bc": {
+              "U": 0.6932539821831514,
+              "bits": 7446088506.75315,
+              "hhi": 0.5123369111285306,
+              "m": 2,
+              "n_eff": 1.9518406311918617,
+              "pairs": {
+                "rack-b>rack-c": 8.765374767199743,
+                "rack-c>rack-b": 12.0322446982948
+              },
+              "pred_A1": 0.048079880546633924,
+              "pred_B3": 0.046874765637798646,
+              "pred_B4": 0.04065504265680236,
+              "resource_share": 0.5
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.037154624904038085,
+            "B3_U_ONLY": 0.036126531618391085,
+            "B4_FULL_SHAPE": 0.03151419866885334
+          },
+          "total_cross_bits": 9720756797.499779,
+          "weight": 0.28571428571428575
+        }
+      },
+      "cross_rack_bits": 9720756797.499779,
+      "mape_objective": 28890.65,
+      "moves": 2,
+      "near_candidate_count": 4,
+      "near_margin": 0.002833387432321216,
+      "placement": {
+        "replica-0": "node-0-0",
+        "replica-1": "node-1-0",
+        "replica-2": "node-2-0",
+        "replica-3": "node-2-0",
+        "replica-4": "node-1-0",
+        "replica-5": "node-2-0",
+        "replica-6": "node-1-0",
+        "replica-7": "node-1-0"
+      },
+      "placement_key": [
+        [
+          "replica-0",
+          "node-0-0"
+        ],
+        [
+          "replica-1",
+          "node-1-0"
+        ],
+        [
+          "replica-2",
+          "node-2-0"
+        ],
+        [
+          "replica-3",
+          "node-2-0"
+        ],
+        [
+          "replica-4",
+          "node-1-0"
+        ],
+        [
+          "replica-5",
+          "node-2-0"
+        ],
+        [
+          "replica-6",
+          "node-1-0"
+        ],
+        [
+          "replica-7",
+          "node-1-0"
+        ]
+      ],
+      "rank_score": 0.017162228714627612,
+      "score": 0.017162228714627612,
+      "selection_rule": "B3 within min+frozen B5 delta; JSA; moves; key",
+      "strict_min_score": 0.016042223674175897,
+      "worst_u": 0.6932539821831514
+    },
+    "B3_STRICT": {
+      "b5": {
+        "state_predictions": {
+          "conflict-dense": {
+            "B5_CONFLICT_RANK": 0.040657073228785826,
+            "B5_GLOBAL_RANK": 0.026925187942862576,
+            "B5_MAE_ONLY": 0.04023233209768762
+          },
+          "partial-blockage": {
+            "B5_CONFLICT_RANK": 0.0,
+            "B5_GLOBAL_RANK": 0.0,
+            "B5_MAE_ONLY": 0.0
+          },
+          "persistent-degradation": {
+            "B5_CONFLICT_RANK": 0.0,
+            "B5_GLOBAL_RANK": 0.004179313347070647,
+            "B5_MAE_ONLY": 0.0
+          }
+        }
+      },
+      "contention": {
+        "conflict-dense": {
+          "groups": {
+            "cg-shared": {
+              "U": 0.5475552071609997,
+              "bits": 10931069343.46575,
+              "hhi": 0.31383987780202854,
+              "m": 4,
+              "n_eff": 3.1863382276448755,
+              "pairs": {
+                "rack-a>rack-b": 1.7719201749428763,
+                "rack-b>rack-a": 1.9675577736937355,
+                "rack-b>rack-c": 0.7959885376004314,
+                "rack-c>rack-a": 3.677861621177954
+              },
+              "pred_A1": 0.06025647464965951,
+              "pred_B3": 0.03367795126018313,
+              "pred_B4": 0.06446792472087128,
+              "resource_share": 0.25
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.06025647464965951,
+            "B3_U_ONLY": 0.03367795126018313,
+            "B4_FULL_SHAPE": 0.06446792472087128
+          },
+          "total_cross_bits": 10931069343.46575,
+          "weight": 0.28571428571428575
+        },
+        "partial-blockage": {
+          "groups": {
+            "cg-ab": {
+              "U": 0.054721341191771126,
+              "bits": 5284331078.7773695,
+              "hhi": 0.5040148794060266,
+              "m": 2,
+              "n_eff": 1.98406840920745,
+              "pairs": {
+                "rack-a>rack-b": 1.1209009685545546,
+                "rack-b>rack-a": 1.3415593850751464
+              },
+              "pred_A1": 0.004293287062560236,
+              "pred_B3": 0.0006717173410523085,
+              "pred_B4": 0.006010667747646436,
+              "resource_share": 0.75
+            },
+            "cg-ac": {
+              "U": 0.26426404466740994,
+              "bits": 4257602948.524235,
+              "hhi": 1.0,
+              "m": 1,
+              "n_eff": 1.0,
+              "pairs": {
+                "rack-c>rack-a": 11.891882010033447
+              },
+              "pred_A1": 0.009022222509598927,
+              "pred_B3": 0.015665679938904713,
+              "pred_B4": 0.0017366126679632565,
+              "resource_share": 0.75
+            },
+            "cg-bc": {
+              "U": 0.014894824967086554,
+              "bits": 1389135316.164145,
+              "hhi": 1.0,
+              "m": 1,
+              "n_eff": 1.0,
+              "pairs": {
+                "rack-b>rack-c": 0.670267123518895
+              },
+              "pred_A1": 2.866211183861204e-05,
+              "pred_B3": 4.976727962085565e-05,
+              "pred_B4": 5.516931826560104e-06,
+              "resource_share": 0.75
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.005593232010942133,
+            "B3_U_ONLY": 0.006432760894316171,
+            "B4_FULL_SHAPE": 0.0035827994620586485
+          },
+          "total_cross_bits": 10931069343.46575,
+          "weight": 0.4285714285714286
+        },
+        "persistent-degradation": {
+          "groups": {
+            "cg-ab": {
+              "U": 0.3753873008621636,
+              "bits": 5284331078.7773695,
+              "hhi": 0.5718889574733259,
+              "m": 2,
+              "n_eff": 1.7485912027714612,
+              "pairs": {
+                "rack-a>rack-b": 3.4957158759202347,
+                "rack-b>rack-a": 7.765903149944673
+              },
+              "pred_A1": 0.01768053326115175,
+              "pred_B3": 0.01374401171669829,
+              "pred_B4": 0.018138412662566335,
+              "resource_share": 0.5
+            },
+            "cg-ac": {
+              "U": 0.3963960670011149,
+              "bits": 4257602948.524235,
+              "hhi": 1.0,
+              "m": 1,
+              "n_eff": 1.0,
+              "pairs": {
+                "rack-c>rack-a": 11.891882010033447
+              },
+              "pred_A1": 0.008362894182193315,
+              "pred_B3": 0.015325442999265748,
+              "pred_B4": 0.003267218408640722,
+              "resource_share": 0.5
+            },
+            "cg-bc": {
+              "U": 0.129332815322923,
+              "bits": 1389135316.164145,
+              "hhi": 1.0,
+              "m": 1,
+              "n_eff": 1.0,
+              "pairs": {
+                "rack-b>rack-c": 3.8799844596876905
+              },
+              "pred_A1": 0.0008902569869313548,
+              "pred_B3": 0.0016314427052018829,
+              "pred_B4": 0.00034780590938438693,
+              "resource_share": 0.5
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.011917622847067984,
+            "B3_U_ONLY": 0.012820690257958239,
+            "B4_FULL_SHAPE": 0.010085293807086304
+          },
+          "total_cross_bits": 10931069343.46575,
+          "weight": 0.28571428571428575
+        }
+      },
+      "cross_rack_bits": 10931069343.465748,
+      "mape_objective": 37539.75,
+      "moves": 2,
+      "placement": {
+        "replica-0": "node-0-0",
+        "replica-1": "node-1-0",
+        "replica-2": "node-2-0",
+        "replica-3": "node-0-0",
+        "replica-4": "node-1-0",
+        "replica-5": "node-0-0",
+        "replica-6": "node-0-0",
+        "replica-7": "node-0-0"
+      },
+      "placement_key": [
+        [
+          "replica-0",
+          "node-0-0"
+        ],
+        [
+          "replica-1",
+          "node-1-0"
+        ],
+        [
+          "replica-2",
+          "node-2-0"
+        ],
+        [
+          "replica-3",
+          "node-0-0"
+        ],
+        [
+          "replica-4",
+          "node-1-0"
+        ],
+        [
+          "replica-5",
+          "node-0-0"
+        ],
+        [
+          "replica-6",
+          "node-0-0"
+        ],
+        [
+          "replica-7",
+          "node-0-0"
+        ]
+      ],
+      "rank_score": 0.016042223674175897,
+      "score": 0.016042223674175897,
+      "selection_rule": "strict minimum B3 score; moves; key",
+      "worst_u": 0.5475552071609997
+    },
+    "B5_COMPLETE": {
+      "b1_tiebreak_objective": 27183.457142857143,
+      "b5": {
+        "state_predictions": {
+          "conflict-dense": {
+            "B5_CONFLICT_RANK": 0.012767268638509098,
+            "B5_GLOBAL_RANK": 0.0,
+            "B5_MAE_ONLY": 0.012905580013650286
+          },
+          "partial-blockage": {
+            "B5_CONFLICT_RANK": 0.0,
+            "B5_GLOBAL_RANK": 0.0,
+            "B5_MAE_ONLY": 0.0
+          },
+          "persistent-degradation": {
+            "B5_CONFLICT_RANK": 0.020868230008351092,
+            "B5_GLOBAL_RANK": 0.002852245667808638,
+            "B5_MAE_ONLY": 0.020842995361236228
+          }
+        }
+      },
+      "contention": {
+        "conflict-dense": {
+          "groups": {
+            "cg-shared": {
+              "U": 0.4805131469059434,
+              "bits": 10185341072.335901,
+              "hhi": 0.539468185695794,
+              "m": 2,
+              "n_eff": 1.8536774299493164,
+              "pairs": {
+                "rack-a>rack-b": 2.5913250889930506,
+                "rack-b>rack-a": 4.616372114596101
+              },
+              "pred_A1": 0.032252469640083,
+              "pred_B3": 0.025935844062856997,
+              "pred_B4": 0.030913943587508305,
+              "resource_share": 0.25
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.032252469640083,
+            "B3_U_ONLY": 0.025935844062856997,
+            "B4_FULL_SHAPE": 0.03091394358750831
+          },
+          "total_cross_bits": 10185341072.335901,
+          "weight": 0.28571428571428575
+        },
+        "partial-blockage": {
+          "groups": {
+            "cg-ab": {
+              "U": 0.10637502038357079,
+              "bits": 10185341072.335901,
+              "hhi": 0.5496461663154413,
+              "m": 2,
+              "n_eff": 1.81935226930356,
+              "pairs": {
+                "rack-a>rack-b": 1.639249241115316,
+                "rack-b>rack-a": 3.1476266761453706
+              },
+              "pred_A1": 0.00809516610964547,
+              "pred_B3": 0.0025383552716671037,
+              "pred_B4": 0.011297776996988666,
+              "resource_share": 0.75
+            },
+            "cg-ac": {
+              "U": 0.0,
+              "bits": 0.0,
+              "hhi": 0.0,
+              "m": 0,
+              "n_eff": 0.0,
+              "pairs": {},
+              "resource_share": 0.75
+            },
+            "cg-bc": {
+              "U": 0.0,
+              "bits": 0.0,
+              "hhi": 0.0,
+              "m": 0,
+              "n_eff": 0.0,
+              "pairs": {},
+              "resource_share": 0.75
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.00809516610964547,
+            "B3_U_ONLY": 0.0025383552716671037,
+            "B4_FULL_SHAPE": 0.011297776996988666
+          },
+          "total_cross_bits": 10185341072.335901,
+          "weight": 0.4285714285714286
+        },
+        "persistent-degradation": {
+          "groups": {
+            "cg-ab": {
+              "U": 0.7777660212392343,
+              "bits": 10185341072.335901,
+              "hhi": 0.6578088969550138,
+              "m": 2,
+              "n_eff": 1.5201983503552219,
+              "pairs": {
+                "rack-a>rack-b": 5.112271072569877,
+                "rack-b>rack-a": 18.220709564607155
+              },
+              "pred_A1": 0.048005391384750795,
+              "pred_B3": 0.05900003854553139,
+              "pred_B4": 0.04041033330759972,
+              "resource_share": 0.5
+            },
+            "cg-ac": {
+              "U": 0.0,
+              "bits": 0.0,
+              "hhi": 0.0,
+              "m": 0,
+              "n_eff": 0.0,
+              "pairs": {},
+              "resource_share": 0.5
+            },
+            "cg-bc": {
+              "U": 0.0,
+              "bits": 0.0,
+              "hhi": 0.0,
+              "m": 0,
+              "n_eff": 0.0,
+              "pairs": {},
+              "resource_share": 0.5
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.048005391384750795,
+            "B3_U_ONLY": 0.05900003854553139,
+            "B4_FULL_SHAPE": 0.04041033330759972
+          },
+          "total_cross_bits": 10185341072.335901,
+          "weight": 0.28571428571428575
+        }
+      },
+      "cross_rack_bits": 10185341072.335901,
+      "mape_objective": 27183.457142857143,
+      "moves": 2,
+      "near_candidate_count": 3,
+      "near_margin": 0.002833387432321216,
+      "placement": {
+        "replica-0": "node-0-0",
+        "replica-1": "node-1-0",
+        "replica-2": "node-0-0",
+        "replica-3": "node-0-0",
+        "replica-4": "node-1-0",
+        "replica-5": "node-0-0",
+        "replica-6": "node-0-0",
+        "replica-7": "node-1-0"
+      },
+      "placement_key": [
+        [
+          "replica-0",
+          "node-0-0"
+        ],
+        [
+          "replica-1",
+          "node-1-0"
+        ],
+        [
+          "replica-2",
+          "node-0-0"
+        ],
+        [
+          "replica-3",
+          "node-0-0"
+        ],
+        [
+          "replica-4",
+          "node-1-0"
+        ],
+        [
+          "replica-5",
+          "node-0-0"
+        ],
+        [
+          "replica-6",
+          "node-0-0"
+        ],
+        [
+          "replica-7",
+          "node-1-0"
+        ]
+      ],
+      "rank_score": 0.009610142470531484,
+      "score": 0.009610142470531484,
+      "selection_rule": "B5 within min+frozen delta; JSA; moves; key",
+      "strict_min_score": 0.009610142470531484,
+      "worst_u": 0.7777660212392343
+    },
+    "B5_NOTIE": {
+      "b5": {
+        "state_predictions": {
+          "conflict-dense": {
+            "B5_CONFLICT_RANK": 0.012767268638509098,
+            "B5_GLOBAL_RANK": 0.0,
+            "B5_MAE_ONLY": 0.012905580013650286
+          },
+          "partial-blockage": {
+            "B5_CONFLICT_RANK": 0.0,
+            "B5_GLOBAL_RANK": 0.0,
+            "B5_MAE_ONLY": 0.0
+          },
+          "persistent-degradation": {
+            "B5_CONFLICT_RANK": 0.020868230008351092,
+            "B5_GLOBAL_RANK": 0.002852245667808638,
+            "B5_MAE_ONLY": 0.020842995361236228
+          }
+        }
+      },
+      "contention": {
+        "conflict-dense": {
+          "groups": {
+            "cg-shared": {
+              "U": 0.4805131469059434,
+              "bits": 10185341072.335901,
+              "hhi": 0.539468185695794,
+              "m": 2,
+              "n_eff": 1.8536774299493164,
+              "pairs": {
+                "rack-a>rack-b": 2.5913250889930506,
+                "rack-b>rack-a": 4.616372114596101
+              },
+              "pred_A1": 0.032252469640083,
+              "pred_B3": 0.025935844062856997,
+              "pred_B4": 0.030913943587508305,
+              "resource_share": 0.25
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.032252469640083,
+            "B3_U_ONLY": 0.025935844062856997,
+            "B4_FULL_SHAPE": 0.03091394358750831
+          },
+          "total_cross_bits": 10185341072.335901,
+          "weight": 0.28571428571428575
+        },
+        "partial-blockage": {
+          "groups": {
+            "cg-ab": {
+              "U": 0.10637502038357079,
+              "bits": 10185341072.335901,
+              "hhi": 0.5496461663154413,
+              "m": 2,
+              "n_eff": 1.81935226930356,
+              "pairs": {
+                "rack-a>rack-b": 1.639249241115316,
+                "rack-b>rack-a": 3.1476266761453706
+              },
+              "pred_A1": 0.00809516610964547,
+              "pred_B3": 0.0025383552716671037,
+              "pred_B4": 0.011297776996988666,
+              "resource_share": 0.75
+            },
+            "cg-ac": {
+              "U": 0.0,
+              "bits": 0.0,
+              "hhi": 0.0,
+              "m": 0,
+              "n_eff": 0.0,
+              "pairs": {},
+              "resource_share": 0.75
+            },
+            "cg-bc": {
+              "U": 0.0,
+              "bits": 0.0,
+              "hhi": 0.0,
+              "m": 0,
+              "n_eff": 0.0,
+              "pairs": {},
+              "resource_share": 0.75
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.00809516610964547,
+            "B3_U_ONLY": 0.0025383552716671037,
+            "B4_FULL_SHAPE": 0.011297776996988666
+          },
+          "total_cross_bits": 10185341072.335901,
+          "weight": 0.4285714285714286
+        },
+        "persistent-degradation": {
+          "groups": {
+            "cg-ab": {
+              "U": 0.7777660212392343,
+              "bits": 10185341072.335901,
+              "hhi": 0.6578088969550138,
+              "m": 2,
+              "n_eff": 1.5201983503552219,
+              "pairs": {
+                "rack-a>rack-b": 5.112271072569877,
+                "rack-b>rack-a": 18.220709564607155
+              },
+              "pred_A1": 0.048005391384750795,
+              "pred_B3": 0.05900003854553139,
+              "pred_B4": 0.04041033330759972,
+              "resource_share": 0.5
+            },
+            "cg-ac": {
+              "U": 0.0,
+              "bits": 0.0,
+              "hhi": 0.0,
+              "m": 0,
+              "n_eff": 0.0,
+              "pairs": {},
+              "resource_share": 0.5
+            },
+            "cg-bc": {
+              "U": 0.0,
+              "bits": 0.0,
+              "hhi": 0.0,
+              "m": 0,
+              "n_eff": 0.0,
+              "pairs": {},
+              "resource_share": 0.5
+            }
+          },
+          "predicted_loss_fraction": {
+            "A1_U_NEFF": 0.048005391384750795,
+            "B3_U_ONLY": 0.05900003854553139,
+            "B4_FULL_SHAPE": 0.04041033330759972
+          },
+          "total_cross_bits": 10185341072.335901,
+          "weight": 0.28571428571428575
+        }
+      },
+      "cross_rack_bits": 10185341072.335901,
+      "mape_objective": 27183.457142857143,
+      "moves": 2,
+      "placement": {
+        "replica-0": "node-0-0",
+        "replica-1": "node-1-0",
+        "replica-2": "node-0-0",
+        "replica-3": "node-0-0",
+        "replica-4": "node-1-0",
+        "replica-5": "node-0-0",
+        "replica-6": "node-0-0",
+        "replica-7": "node-1-0"
+      },
+      "placement_key": [
+        [
+          "replica-0",
+          "node-0-0"
+        ],
+        [
+          "replica-1",
+          "node-1-0"
+        ],
+        [
+          "replica-2",
+          "node-0-0"
+        ],
+        [
+          "replica-3",
+          "node-0-0"
+        ],
+        [
+          "replica-4",
+          "node-1-0"
+        ],
+        [
+          "replica-5",
+          "node-0-0"
+        ],
+        [
+          "replica-6",
+          "node-0-0"
+        ],
+        [
+          "replica-7",
+          "node-1-0"
+        ]
+      ],
+      "rank_score": 0.009610142470531484,
+      "score": 0.009610142470531484,
+      "selection_rule": "strict minimum B5 score; moves; key",
+      "worst_u": 0.7777660212392343
+    }
+  },
+  "size": "n8",
+  "target": 0.95,
+  "unit_current_utilization": 0.028209239765213476,
+  "valid": true,
+  "x_adm_sha256": "4beb0e1ef18eec16a1630bac7003d0d85b962187e25e39d5c76920d87a77a4d5"
+}

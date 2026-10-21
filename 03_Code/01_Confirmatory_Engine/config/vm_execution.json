@@ -1,0 +1,127 @@
+{
+  "coordinator_role": "vm2",
+  "merge_policy": {
+    "collision": "byte-identical only; conflicting duplicate artifacts abort",
+    "provenance_fields": [
+      "role",
+      "hostname",
+      "machine_id_sha256",
+      "source_manifest_sha256",
+      "stage_a_coefficients_sha256",
+      "b5_model_lock_sha256",
+      "created_utc"
+    ],
+    "required_random_graphs": 200,
+    "required_seed_ranges": {
+      "n12": [
+        92001,
+        92050
+      ],
+      "n16": [
+        93001,
+        93050
+      ],
+      "n24": [
+        94001,
+        94050
+      ],
+      "n8": [
+        91001,
+        91050
+      ]
+    }
+  },
+  "notes": [
+    "VM worker counts affect wall time only, not scientific replication.",
+    "B5 model lock is fitted once from historical development data and must hash-match on every VM.",
+    "Legacy B3/B4 Stage-A coefficients are fitted on calibration only; B5 is never refit on confirmatory outcomes.",
+    "VM3 secondary results are not substitutes for the 200-graph primary Stage-D result."
+  ],
+  "profile_id": "azure-3vm-b5-2-3-1-v1.0",
+  "random_graph_partition": {
+    "policy": "per-size deterministic 20/30 split matching vm1:vm2 worker ratio 2:3",
+    "vm1": {
+      "n12": [
+        92001,
+        92020
+      ],
+      "n16": [
+        93001,
+        93020
+      ],
+      "n24": [
+        94001,
+        94020
+      ],
+      "n8": [
+        91001,
+        91020
+      ]
+    },
+    "vm2": {
+      "n12": [
+        92021,
+        92050
+      ],
+      "n16": [
+        93021,
+        93050
+      ],
+      "n24": [
+        94021,
+        94050
+      ],
+      "n8": [
+        91021,
+        91050
+      ]
+    }
+  },
+  "roles": {
+    "vm1": {
+      "duties": [
+        "random_stage_c",
+        "random_robustness",
+        "random_stage_d",
+        "k3s_rack_b"
+      ],
+      "free_vcpu_at_freeze": 3,
+      "heavy_workers": 2,
+      "total_vcpu": 4
+    },
+    "vm2": {
+      "duties": [
+        "coordinator",
+        "stage_a",
+        "random_stage_c",
+        "random_robustness",
+        "random_stage_d",
+        "oracle_after_merge",
+        "stage_e_control",
+        "final_analysis",
+        "k3s_rack_a"
+      ],
+      "free_vcpu_at_freeze": 4,
+      "heavy_workers": 3,
+      "total_vcpu": 4
+    },
+    "vm3": {
+      "duties": [
+        "b5_rq1_prediction_panel",
+        "structured_generalization",
+        "external_snob5g",
+        "k3s_rack_c"
+      ],
+      "free_vcpu_at_freeze": 2,
+      "heavy_workers": 1,
+      "total_vcpu": 2
+    }
+  },
+  "scientific_campaign_id": "paper2-b5-conflict-conditioned-confirmatory-v1.0",
+  "scientific_protocol_id": "PAPER2_B5_CONFIRMATORY_PROTOCOL_V1_0_20261009",
+  "stage_e_rack_map": {
+    "rack-a": "vm2",
+    "rack-b": "vm1",
+    "rack-c": "vm3"
+  }
+}

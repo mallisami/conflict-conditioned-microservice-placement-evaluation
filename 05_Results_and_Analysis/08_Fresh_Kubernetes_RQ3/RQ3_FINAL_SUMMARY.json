@@ -1,0 +1,256 @@
+{
+  "analysis_design": "replicate 1 only for all treatment-effect estimates; repeats 2-3 on frozen 64-graph subset are descriptive repeatability diagnostics only",
+  "execution_accounting": {
+    "accepted_cells": 1152,
+    "expected_cells": 1152,
+    "fresh_original_pair_graphs": 256,
+    "main_inference_cells": 768,
+    "panel_A_graphs": 128,
+    "panel_B_graphs": 128,
+    "repeatability_extra_cells": 384,
+    "repeatability_graphs": 64
+  },
+  "experiment_id": "PAPER2_RQ3_PROSPECTIVE_MECHANISM_PRECISION_HYBRID_20261016",
+  "fresh_precision_replication": {
+    "ci95": [
+      -0.01042953133908595,
+      -0.001060711511804622
+    ],
+    "contrast": "B5_COMPLETE-minus-B3_STRICT",
+    "endpoint": "completion",
+    "losses": 138,
+    "main_inference_replicate": 1,
+    "mean_difference": -0.00567851820936318,
+    "n_graphs": 256,
+    "practically_relevant_point_estimate": false,
+    "role": "fresh_precision_replication",
+    "sesoi": 0.005,
+    "statistically_positive": false,
+    "ties": 13,
+    "wilcoxon_p": 0.020034595210476094,
+    "wins": 105
+  },
+  "interpretation_rule": "Report all directions and intervals. Do not call lack of significance equivalence without a separately frozen equivalence test.",
+  "mechanism_primary": {
+    "ci95": [
+      -0.013232127538962628,
+      -0.0013001732557678819
+    ],
+    "contrast": "B5_COMPLETE-minus-B3_STABILIZED",
+    "endpoint": "completion",
+    "losses": 67,
+    "main_inference_replicate": 1,
+    "mean_difference": -0.007082987694544622,
+    "n_graphs": 128,
+    "practically_relevant_point_estimate": false,
+    "role": "mechanism_primary",
+    "sesoi": 0.005,
+    "statistically_positive": false,
+    "ties": 10,
+    "wilcoxon_p": 0.07176693019491602,
+    "wins": 51
+  },
+  "mechanism_secondary": [
+    {
+      "ci95": [
+        -0.003843578473858357,
+        0.005540068817501154
+      ],
+      "contrast": "B3_STABILIZED-minus-B3_STRICT",
+      "endpoint": "completion",
+      "holm_p": 0.6593660958158035,
+      "losses": 66,
+      "main_inference_replicate": 1,
+      "mean_difference": 0.0006278828852303332,
+      "n_graphs": 128,
+      "role": "mechanism_secondary",
+      "ties": 14,
+      "wilcoxon_p": 0.21978869860526784,
+      "wins": 48
+    },
+    {
+      "ci95": [
+        -0.006391778130378938,
+        0.008091217290831024
+      ],
+      "contrast": "B5_COMPLETE-minus-B5_NOTIE",
+      "endpoint": "completion",
+      "holm_p": 1.0,
+      "losses": 61,
+      "main_inference_replicate": 1,
+      "mean_difference": 0.0009020549865101273,
+      "n_graphs": 128,
+      "role": "mechanism_secondary",
+      "ties": 8,
+      "wilcoxon_p": 0.9540552055088688,
+      "wins": 59
+    },
+    {
+      "ci95": [
+        -0.008256403789219826,
+        0.008696019186363061
+      ],
+      "contrast": "stabilizer_interaction",
+      "endpoint": "completion",
+      "holm_p": 1.0,
+      "losses": 60,
+      "main_inference_replicate": 1,
+      "mean_difference": 0.00027417210127979406,
+      "n_graphs": 128,
+      "role": "mechanism_secondary",
+      "ties": 3,
+      "wilcoxon_p": 0.5098306242947732,
+      "wins": 65
+    }
+  ],
+  "original_RQ3_unchanged": true,
+  "post_confirmatory": true,
+  "repeatability_diagnostic": {
+    "additional_repeats_used_in_primary_inference": false,
+    "graph_method_groups": 192,
+    "metrics": {
+      "completion": {
+        "max_within_group_range": 0.010877192982456152,
+        "max_within_group_sd": 0.005916556664300229,
+        "mean_within_group_range": 0.0019513795466857317,
+        "mean_within_group_sd": 0.0010266787081306978,
+        "median_within_group_sd": 0.0009291727130903379,
+        "p95_within_group_sd": 0.0021107693446653216
+      },
+      "medium_queue_wait_mean_ms": {
+        "max_within_group_range": 14.069748278520393,
+        "max_within_group_sd": 7.066475892082842,
+        "mean_within_group_range": 2.6704897238069187,
+        "mean_within_group_sd": 1.3856344046157607,
+        "median_within_group_sd": 1.098557314368693,
+        "p95_within_group_sd": 3.5167414178775793
+      },
+      "ta_p95_ms": {
+        "max_within_group_range": 2743.3114679297432,
+        "max_within_group_sd": 1583.8516144802247,
+        "mean_within_group_range": 99.62737053016706,
+        "mean_within_group_sd": 56.59015495868041,
+        "median_within_group_sd": 1.5320619762870211,
+        "p95_within_group_sd": 116.72917242924287
+      },
+      "throughput_success_rps": {
+        "max_within_group_range": 0.7999999999999972,
+        "max_within_group_sd": 0.4215546623313926,
+        "mean_within_group_range": 0.13385416666666625,
+        "mean_within_group_sd": 0.07041132364864555,
+        "median_within_group_sd": 0.06291528696058978,
+        "p95_within_group_sd": 0.14530464638075066
+      }
+    },
+    "n_graphs": 64,
+    "panel_A_graphs": 32,
+    "panel_B_graphs": 32,
+    "repeats_per_selected_graph_method": 3,
+    "selection_lock_sha256": "c56c2ba0005df8f703717690b58bb6dd7602f868816ea14a932d15d7acea4f07",
+    "status": "DESCRIPTIVE_DIAGNOSTIC_ONLY"
+  },
+  "secondary_application_metrics": [
+    {
+      "beneficial_direction": "lower",
+      "ci95": [
+        -4.476262007733566,
+        348.8546137042704
+      ],
+      "contrast": "B5_COMPLETE-minus-B3_STABILIZED",
+      "endpoint": "ta_p95_ms",
+      "losses": 47,
+      "main_inference_replicate": 1,
+      "mean_difference": 169.20047471830912,
+      "n_graphs": 128,
+      "role": "mechanism_secondary_metric",
+      "ties": 33,
+      "wilcoxon_p": 0.3553546111710034,
+      "wins": 48
+    },
+    {
+      "beneficial_direction": "lower",
+      "ci95": [
+        -61.74933337887296,
+        221.41978309996375
+      ],
+      "contrast": "B5_COMPLETE-minus-B3_STRICT",
+      "endpoint": "ta_p95_ms",
+      "losses": 89,
+      "main_inference_replicate": 1,
+      "mean_difference": 79.97683213989148,
+      "n_graphs": 256,
+      "role": "replication_secondary_metric",
+      "ties": 56,
+      "wilcoxon_p": 0.0032756652310697494,
+      "wins": 111
+    },
+    {
+      "beneficial_direction": "higher",
+      "ci95": [
+        -0.8980468749999999,
+        -0.09277343749999978
+      ],
+      "contrast": "B5_COMPLETE-minus-B3_STABILIZED",
+      "endpoint": "throughput_success_rps",
+      "losses": 67,
+      "main_inference_replicate": 1,
+      "mean_difference": -0.4826171874999997,
+      "n_graphs": 128,
+      "role": "mechanism_secondary_metric",
+      "ties": 10,
+      "wilcoxon_p": 0.060840449424209575,
+      "wins": 51
+    },
+    {
+      "beneficial_direction": "higher",
+      "ci95": [
+        -0.6955078125000002,
+        -0.08154296874999983
+      ],
+      "contrast": "B5_COMPLETE-minus-B3_STRICT",
+      "endpoint": "throughput_success_rps",
+      "losses": 138,
+      "main_inference_replicate": 1,
+      "mean_difference": -0.3822265625000003,
+      "n_graphs": 256,
+      "role": "replication_secondary_metric",
+      "ties": 13,
+      "wilcoxon_p": 0.019773129641818883,
+      "wins": 105
+    },
+    {
+      "beneficial_direction": "lower",
+      "ci95": [
+        -4.744085846132243,
+        18.83651930883536
+      ],
+      "contrast": "B5_COMPLETE-minus-B3_STABILIZED",
+      "endpoint": "medium_queue_wait_mean_ms",
+      "losses": 51,
+      "main_inference_replicate": 1,
+      "mean_difference": 6.946085858283116,
+      "n_graphs": 128,
+      "role": "mechanism_secondary_metric",
+      "ties": 0,
+      "wilcoxon_p": 0.09455600408265966,
+      "wins": 77
+    },
+    {
+      "beneficial_direction": "lower",
+      "ci95": [
+        4.861339337582351,
+        21.36745135473579
+      ],
+      "contrast": "B5_COMPLETE-minus-B3_STRICT",
+      "endpoint": "medium_queue_wait_mean_ms",
+      "losses": 106,
+      "main_inference_replicate": 1,
+      "mean_difference": 13.045195034463838,
+      "n_graphs": 256,
+      "role": "replication_secondary_metric",
+      "ties": 0,
+      "wilcoxon_p": 0.0017122485320676649,
+      "wins": 150
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Runtime and environment notes
+
+The original experiments use Python with the versions in the included `requirements-lock.txt` and `requirements-b5-vm.txt` files. The confirmatory engine includes Dockerfiles for the shared-airtime benchmark and ns-3 WiGig simulator, plus example VM execution scripts. The fresh Kubernetes extension requires a suitable Kubernetes cluster, `kubectl`, Docker/image access, and the pinned Python dependencies.
+
+The archived raw outputs and offline verification are available without provisioning the simulator or Kubernetes cluster. Full reruns are resource-intensive; the reviewer should run the offline verifier first.

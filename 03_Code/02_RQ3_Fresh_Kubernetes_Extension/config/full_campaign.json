@@ -1,0 +1,394 @@
+{
+  "b5_prediction_panel_config": "config/b5_prediction_panel.json",
+  "bootstrap_resamples": 100000,
+  "bootstrap_seed": 20261106,
+  "campaign_id": "paper2-b5-conflict-conditioned-confirmatory-v1.1",
+  "confirmatory_methods": [
+    "B1_MAPE_CAP_WS",
+    "B3_U_ONLY",
+    "A1_U_NEFF",
+    "B4_FULL_SHAPE",
+    "B5_CONFLICT_RANK",
+    "B5_MAE_ONLY",
+    "B5_GLOBAL_RANK",
+    "B5_NOTIE"
+  ],
+  "deathstarbench_validation": {
+    "bootstrap_resamples": 100000,
+    "bootstrap_seed": 20261210,
+    "bundle_local_infrastructure": {
+      "frontend": [],
+      "geo": [
+        "mongodb-geo"
+      ],
+      "profile": [
+        "mongodb-profile",
+        "memcached-profile"
+      ],
+      "rate": [
+        "mongodb-rate",
+        "memcached-rate"
+      ],
+      "reccomend": [
+        "mongodb-recommendation"
+      ],
+      "reserve": [
+        "mongodb-reservation",
+        "memcached-reserve"
+      ],
+      "search": [],
+      "user": [
+        "mongodb-user"
+      ]
+    },
+    "calibration": {
+      "duration_seconds": 60,
+      "neutral_placement": "round_robin",
+      "proxy_mode": "observe",
+      "rps": 20,
+      "workload_seed": 20261201
+    },
+    "claim_role": "secondary genuine real-workload generalization; never substitutes for RQ2",
+    "confirmation": {
+      "connections": 16,
+      "duration_seconds": 30,
+      "fresh_namespace_per_cell": true,
+      "method_order_seed": 20261209,
+      "replicates": 12,
+      "threads": 1,
+      "workload_seed_base": 20261300
+    },
+    "enabled": true,
+    "fixed_infrastructure": [
+      "consul",
+      "jaeger"
+    ],
+    "global_fixed_infrastructure": [
+      "consul",
+      "jaeger"
+    ],
+    "load_pilot": {
+      "b3_only": true,
+      "candidate_rps": [
+        5,
+        10,
+        20,
+        40,
+        80,
+        120,
+        180,
+        250,
+        350,
+        500,
+        750,
+        1000,
+        1500
+      ],
+      "duration_seconds": 30,
+      "high_completion_band": [
+        0.85,
+        0.95
+      ],
+      "workload_seed_base": 20261220
+    },
+    "max_movable_bundles_per_rack": 3,
+    "methods": [
+      "B1_MAPE_CAP_WS",
+      "B3_U_ONLY",
+      "B5_CONFLICT_RANK"
+    ],
+    "movable_service_bundles": [
+      "frontend",
+      "geo",
+      "profile",
+      "rate",
+      "reccomend",
+      "reserve",
+      "search",
+      "user"
+    ],
+    "namespace": "hotel-res",
+    "primary_comparator": "B3_U_ONLY",
+    "primary_endpoint": "scheduled_success_fraction",
+    "protocol": "paper2-deathstarbench-real-workload-v1.1",
+    "required_inclusion_gates": [
+      "measured_directed_bundle_byte_matrix",
+      "same_hard_admission",
+      "same_x_adm",
+      "actual_selected_placements",
+      "cross_rack_application_traffic_obeys_shared_medium",
+      "bundle_local_state_cache_colocated"
+    ],
+    "secondary_endpoints": [
+      "p95_latency_ms",
+      "successful_rps",
+      "error_fraction",
+      "medium_queue_wait_mean_ms"
+    ],
+    "source_commit": "6ecb09706140f8730b5385c08f1386c654c3c526",
+    "source_repo": "https://github.com/delimitrou/DeathStarBench.git",
+    "status": "execution_ready_non_hardware_extension",
+    "warmup": {
+      "duration_seconds": 15,
+      "max_rps": 20
+    },
+    "workload": "hotelReservation",
+    "workload_driver": {
+      "application_code_modified": false,
+      "paired_confirmation_request_sequence": true,
+      "patched_path": "hotelReservation/wrk2/scripts/hotel-reservation/paper2_mixed_workload_type_1.lua",
+      "request_mix_probabilities_unchanged": true,
+      "upstream_git_blob_sha1": "d4627e7b4c70528389096d131da199e620b2e2d5",
+      "upstream_path": "hotelReservation/wrk2/scripts/hotel-reservation/mixed-workload_type_1.lua"
+    }
+  },
+  "external_validation": {
+    "conditions": [
+      "normal",
+      "short_blockage",
+      "long_blockage"
+    ],
+    "dataset_file": "dataset_complete.csv",
+    "dataset_name": "SNOB5GData",
+    "doi": "10.5281/zenodo.10050012",
+    "expected_git_blob_sha1": "e174c0d7bd06dc301a8afbca458c3673166fd329",
+    "fixity_policy": "immutable commit + expected Git blob; runtime SHA-256 recorded and rechecked on every campaign resume",
+    "graph_seed_blocks": {
+      "n12": [
+        96101,
+        96105
+      ],
+      "n16": [
+        96201,
+        96205
+      ],
+      "n24": [
+        96301,
+        96305
+      ],
+      "n8": [
+        96001,
+        96005
+      ]
+    },
+    "graph_seeds_per_size": 5,
+    "inferential_unit": "graph_identity; quantile vectors are within-graph sensitivity points and are not independent replicates",
+    "methods": [
+      "B1_MAPE_CAP_WS",
+      "B3_U_ONLY",
+      "B4_FULL_SHAPE",
+      "B5_CONFLICT_RANK"
+    ],
+    "quantiles": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "required": true,
+    "rng_runs": [
+      911,
+      912,
+      913
+    ],
+    "source_commit": "ca29f522febb3418a3308669c77ff7668fa786dd",
+    "source_repo": "https://github.com/nap-it/SNOB5GData.git"
+  },
+  "physical_60ghz_validation": {
+    "claim_role": "direct physical concurrent-link validation if and only if real hardware data pass schema and provenance gates",
+    "enabled": false,
+    "minimum_independent_trial_blocks": 10,
+    "minimum_links": 2,
+    "offered_load_fractions": [
+      0.5,
+      0.8,
+      0.95
+    ],
+    "protocol": "paper2-physical-concurrent-60ghz-v1.0",
+    "required": false,
+    "required_modes": [
+      "standalone",
+      "concurrent"
+    ],
+    "status": "protocol_and_analyzer_only; physical equipment explicitly out of scope for this package"
+  },
+  "practical_significance": {
+    "RQ1_MAE_absolute_improvement_min": 0.005,
+    "RQ2_delivered_fraction_improvement_min": 0.005,
+    "RQ3_scheduled_completion_improvement_min": 0.005,
+    "oracle_regret_reduction_min": 0.005
+  },
+  "protocol": "PAPER2_B5_CONFIRMATORY_PROTOCOL_V1_1_20261009",
+  "release_file": "RELEASE.json",
+  "rq1_primary_source": "b5_prediction_panel_results/RQ1_B5_PREDICTION_SUMMARY.json",
+  "stage_a_ood_workers": 4,
+  "stage_a_workers": 4,
+  "stage_c_robustness": {
+    "eps": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "realizations_per_eps": 5,
+    "seed_base": 20262100
+  },
+  "stage_c_robustness_workers": 3,
+  "stage_c_workers": 3,
+  "stage_d": {
+    "rng_runs": [
+      1811,
+      1812,
+      1813
+    ],
+    "states": [
+      "conflict-dense",
+      "persistent-degradation",
+      "partial-blockage"
+    ],
+    "weighted_state_composite": true
+  },
+  "stage_d_oracle": {
+    "near_best_regret_threshold": 0.01,
+    "rng_runs": [
+      1811,
+      1812,
+      1813
+    ],
+    "seeds": [
+      97001,
+      97002,
+      97003,
+      97004,
+      97005,
+      97006,
+      97007,
+      97008,
+      97009,
+      97010,
+      97011,
+      97012,
+      97013,
+      97014,
+      97015,
+      97016,
+      97017,
+      97018,
+      97019,
+      97020
+    ],
+    "size": "n8",
+    "state": "conflict-dense"
+  },
+  "stage_d_oracle_workers": 4,
+  "stage_d_workers": 4,
+  "stage_e": {
+    "benchmark_image": "paper2-contention-bench:2026-10-06",
+    "execution_cpu_request": 0.1,
+    "execution_memory_request_mb": 128.0,
+    "expected_architecture": "amd64",
+    "expected_kubelet_version": "v1.33.1+k3s1",
+    "expected_os": "linux",
+    "graph_seeds": [
+      98001,
+      98002,
+      98003,
+      98004,
+      98005,
+      98006,
+      98007,
+      98008,
+      98009,
+      98010,
+      98011,
+      98012,
+      98013,
+      98014,
+      98015,
+      98016,
+      98017,
+      98018,
+      98019,
+      98020,
+      98021,
+      98022,
+      98023,
+      98024,
+      98025,
+      98026,
+      98027,
+      98028,
+      98029,
+      98030,
+      98031,
+      98032,
+      98033,
+      98034,
+      98035,
+      98036,
+      98037,
+      98038,
+      98039,
+      98040
+    ],
+    "interpretation": "three-host Kubernetes end-to-end emulation under frozen shared-airtime abstraction; load levels calibrated using B3-only development pilot before B5 confirmation; not physical RF validation",
+    "load_lock_file": "b5_lock/STAGE_E_LOAD_LOCK.json",
+    "load_regimes": [
+      "moderate",
+      "high",
+      "near_capacity"
+    ],
+    "max_cell_attempts": 2,
+    "measurement_seconds": 40,
+    "method_order_seed": 20261008,
+    "methods": [
+      "B1_MAPE_CAP_WS",
+      "B3_U_ONLY",
+      "B5_CONFLICT_RANK"
+    ],
+    "namespace": "paper2-contention-bench",
+    "primary_load_regime": "high",
+    "replicates": [
+      1,
+      2,
+      3
+    ],
+    "settle_seconds": 5
+  },
+  "stage_e_load_pilot": {
+    "b3_only": true,
+    "candidate_multipliers": [
+      1.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      12.0,
+      16.0,
+      24.0,
+      32.0
+    ],
+    "development_only": true,
+    "lock_file": "b5_lock/STAGE_E_LOAD_LOCK.json",
+    "seeds": [
+      71001,
+      71002,
+      71003,
+      71004,
+      71005
+    ],
+    "targets": {
+      "high": [
+        0.85,
+        0.95
+      ],
+      "moderate": [
+        0.97,
+        0.995
+      ],
+      "near_capacity": [
+        0.7,
+        0.85
+      ]
+    }
+  },
+  "structured_topology_workers": 3
+}

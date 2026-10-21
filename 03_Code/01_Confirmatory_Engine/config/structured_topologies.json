@@ -1,0 +1,117 @@
+{
+  "protocol_id": "paper2-b5-structured-confirmatory-v1.0",
+  "topologies": [
+    "pipeline",
+    "fanout_fanin",
+    "hub_spoke",
+    "mesh"
+  ],
+  "sizes": [
+    {
+      "label": "n8",
+      "replicas": 8,
+      "nodes_per_rack": 1
+    },
+    {
+      "label": "n12",
+      "replicas": 12,
+      "nodes_per_rack": 2
+    },
+    {
+      "label": "n16",
+      "replicas": 16,
+      "nodes_per_rack": 2
+    },
+    {
+      "label": "n24",
+      "replicas": 24,
+      "nodes_per_rack": 2
+    }
+  ],
+  "move_budget": 2,
+  "seeds_per_stratum": 5,
+  "seed_blocks": {
+    "pipeline": {
+      "n8": [
+        101001,
+        101005
+      ],
+      "n12": [
+        101101,
+        101105
+      ],
+      "n16": [
+        101201,
+        101205
+      ],
+      "n24": [
+        101301,
+        101305
+      ]
+    },
+    "fanout_fanin": {
+      "n8": [
+        102001,
+        102005
+      ],
+      "n12": [
+        102101,
+        102105
+      ],
+      "n16": [
+        102201,
+        102205
+      ],
+      "n24": [
+        102301,
+        102305
+      ]
+    },
+    "hub_spoke": {
+      "n8": [
+        103001,
+        103005
+      ],
+      "n12": [
+        103101,
+        103105
+      ],
+      "n16": [
+        103201,
+        103205
+      ],
+      "n24": [
+        103301,
+        103305
+      ]
+    },
+    "mesh": {
+      "n8": [
+        104001,
+        104005
+      ],
+      "n12": [
+        104101,
+        104105
+      ],
+      "n16": [
+        104201,
+        104205
+      ],
+      "n24": [
+        104301,
+        104305
+      ]
+    }
+  },
+  "target_current_worst_utilization": 0.95,
+  "execution_state": "conflict-dense",
+  "rng_runs": [
+    851,
+    852,
+    853
+  ],
+  "traffic_jitter_fraction": 0.2,
+  "bootstrap_resamples": 100000,
+  "bootstrap_seed": 20261115
+}

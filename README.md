@@ -1,35 +1,35 @@
 # Conflict-Conditioned Microservice Placement Evaluation
 
-Reproducibility artifacts accompanying **Evaluating Conflict-Conditioned Ranking for Microservice Placement Under Shared Wireless Airtime** (*Engineering Reports* submission candidate, v1.7).
+**Research artifact companion** for *Evaluating Conflict-Conditioned Ranking for Microservice Placement Under Shared Wireless Airtime* (Engineering Reports manuscript under consideration).
 
-The study compares a conflict-conditioned ranking policy (B5) with a calibrated utilization-only placement policy (B3), holding their state-dependent hard-admissible candidate sets identical. Its distinct outcomes include predictor error, modeled ns-3 packet delivery, and request completion in a Kubernetes shared-medium emulator. **The primary evidence does not establish a mean-execution benefit of B5 over B3.**
+The study compares a conflict-conditioned complete-placement ranking policy (B5) with a calibrated utilization-only baseline (B3) over **identical state-dependent hard-admissible placements**. It examines pointwise degradation prediction, modeled ns-3 shared-airtime packet delivery, and request completion on a Kubernetes shared-medium emulator. The prespecified policy-level results do **not** establish that B5 improves mean executed performance.
 
-## Publication status
+## Reviewer navigation
 
-**The full reviewer release has not yet been deposited in this public repository.** The verified offline v1.7 release contains ten original raw-study archives, locked configurations, experiment plans, source code, graph-level results, artifact indexes, and SHA-256 verification scripts. Publishing code and selected derived results alone must not be represented as a complete independent reproduction.
+| Directory | Contents |
+| --- | --- |
+| [`00_START_HERE/`](00_START_HERE/) | Reproduction guide, experiment-to-artifact map, data dictionary, and offline verifier |
+| [`02_Methods_and_Configuration/`](02_Methods_and_Configuration/) | Locked methodology, model calibration records, experiment plans, reproducibility scope |
+| [`03_Code/`](03_Code/) | Frozen confirmatory engine, test scripts, and separate Kubernetes extension |
+| [`05_Results_and_Analysis/`](05_Results_and_Analysis/) | Original derived numerical results and audit tables |
+| [`06_Environment_and_Execution/`](06_Environment_and_Execution/) | Execution-environment notes |
 
-The external-data provenance, redistributable third-party materials, and raw-record privacy and permission boundaries require review before public transfer. No blanket open-source license is asserted for unreviewed material.
+**Begin with:** [`00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md`](00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md) and [`00_START_HERE/REPRODUCTION_GUIDE.md`](00_START_HERE/REPRODUCTION_GUIDE.md).
 
-## Verified offline reviewer-release layout
+## Publication and verification scope
 
-The offline archive has this established structure (the journal manuscript is supplied separately):
+This is a **publicly deposited subset** of the original verified reviewer archive. The ten original raw-study ZIP archives are **not in this repository**, and the public repository alone cannot perform the archive's complete raw-data integrity verification or independently reconstruct every original simulation. A public-subset checksum list is provided in [`PUBLIC_FILE_SHA256SUMS.txt`](PUBLIC_FILE_SHA256SUMS.txt), covering only the files actually deposited here. The original offline archive separately passed complete release-file hashes, ten study-archive checks, and 108,727 archived raw-record hashes. Those offline results must not be mistaken for a verifier pass of this partial public checkout.
 
-- `00_START_HERE/`: reviewer guide, artifact crosswalk, data dictionary, source indexes, verification and unpacking scripts
-- `02_Methods_and_Configuration/`: protocol locks, development configuration, experiment plans
-- `03_Code/`: confirmatory engine and fresh Kubernetes extension
-- `04_Raw_Experimental_Data/`: ten per-study raw data archives
-- `05_Results_and_Analysis/`: graph-level derived results and analysis records
-- `06_Environment_and_Execution/`: software and runtime environment notes
+This repository does **not** distribute the external SNOB5G raw dataset. A simulator source file carrying an IMDEA Networks Institute copyright notice is omitted pending license/redistribution clarification; additional non-public material and selected oversized record indexes and frozen-plan payloads are inventoried in [`DATA_ACCESS_AND_EXCLUSIONS.md`](DATA_ACCESS_AND_EXCLUSIONS.md). Consequently, running every simulator stage from this checkout alone is not yet certified. No blanket license is asserted for materials of uncertain ownership.
 
-The full archived release has passed offline file hashes of 537 manifest-covered files, all ten raw archives and 108,727 internal raw-data records, plus selected point-estimate consistency checks. Those checks do not independently rerun simulations, refit the missing original calibration dataset, or recompute every confidence interval.
+The manuscript and supplementary PDF are supplied to the journal separately; this repository hosts research artifacts, not the submission files. The historical B3 Stage-A `calibration_aggregated.csv` remains unrecovered and cannot be regenerated from the archived files. Original and post-confirmatory Kubernetes cohorts are separate. No external-scheduler superiority, physical concurrent 60-GHz experiment, or completed DeathStarBench run is claimed.
 
-## Scientific boundaries
+## Research result guide
 
-- The original Stage-A B3 `calibration_aggregated.csv` was not recovered. Frozen baseline coefficients are retained, but the historical calibration cannot be reproduced from that missing source file.
-- The original 40-graph Kubernetes study is separate from the 256-graph post-confirmatory study.
-- No native TraDE/Diktyo scheduler trials, completed DeathStarBench validation, or physical concurrent 60-GHz radio validation are claimed.
-- The complete external SNOB5G dataset is not bundled.
+- **RQ1:** B5 has higher mean absolute prediction error than B3 in both in-distribution and shifted-traffic panels (60 independent graph identities each).
+- **RQ2:** On 200 conflict-dense graphs, the mean B5 minus B3 delivered-fraction contrast is approximately **−0.001980**; 140 placements change, with 81 favorable switches, 59 unfavorable switches and 60 unchanged outcomes.
+- **RQ3:** The original 40-graph Kubernetes comparison was inconclusive. The *separately specified* post-confirmatory 256-graph panel showed a B5 minus B3 completion-fraction difference of approximately **−0.005679**.
 
-## Reproduction
+Read the methods, data dictionary, and archived result tables for precise estimands, protocol limitations, and uncertainty measures.
 
-This README will be updated with direct file paths and commands when the deposited material is complete and independently checked. The offline `00_START_HERE/verify_release.py` expects the entire archived release and does not pass on a subset missing the original data archives.
+**Status:** Study artifacts released for scientific inspection; original raw-study archive release and third-party redistribution permissions remain a separate access decision.

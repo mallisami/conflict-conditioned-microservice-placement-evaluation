@@ -1,0 +1,26 @@
+{
+  "protocol_id": "paper2-b5-rq1-prediction-panel-v1.0",
+  "size": "n8",
+  "panel_candidates_per_graph": 12,
+  "execution_state": "conflict-dense",
+  "rng_runs": [1911, 1912, 1913],
+  "id_seed_start": 105001,
+  "id_seed_end": 105060,
+  "ood_families": {
+    "zipf": [106001, 106015],
+    "hotspot": [107001, 107015],
+    "bimodal": [108001, 108015],
+    "lognormal": [109001, 109015]
+  },
+  "target_current_worst_utilization": 0.95,
+  "bootstrap_resamples": 100000,
+  "bootstrap_seed": 20261121,
+  "primary_contrast": "B5_CONFLICT_RANK-minus-B3_U_ONLY",
+  "secondary_contrasts": [
+    "B5_CONFLICT_RANK-minus-B4_FULL_SHAPE",
+    "B5_CONFLICT_RANK-minus-B5_MAE_ONLY",
+    "B5_CONFLICT_RANK-minus-B5_GLOBAL_RANK"
+  ],
+  "inferential_unit": "graph_identity; candidate rows are nested within graph and are never treated as independent replicates",
+  "candidate_panel_rule": "uniform deterministic indices over the exact hard-admissible enumeration; score-independent"
+}
