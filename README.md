@@ -1,5 +1,8 @@
 # Conflict-Conditioned Microservice Placement Evaluation
 
+**Raw evidence and third-party rights audit:** [RAW_DATA_AND_THIRD_PARTY_PROVENANCE.md](RAW_DATA_AND_THIRD_PARTY_PROVENANCE.md) documents the exact ten raw-study archive sizes and record counts, the limited content screening, the upstream GPL-2.0 simulator license, the external SNOB5G source, and the remaining public-release steps.
+
+
 **Research artifact companion** for *Evaluating Conflict-Conditioned Ranking for Microservice Placement Under Shared Wireless Airtime* (Engineering Reports manuscript under consideration).
 
 The study compares a conflict-conditioned complete-placement ranking policy (B5) with a calibrated utilization-only baseline (B3) over **identical state-dependent hard-admissible placements**. It examines pointwise degradation prediction, modeled ns-3 shared-airtime packet delivery, and request completion on a Kubernetes shared-medium emulator. The prespecified policy-level results do **not** establish that B5 improves mean executed performance.
