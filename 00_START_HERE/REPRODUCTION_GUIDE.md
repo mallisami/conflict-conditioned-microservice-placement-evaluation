@@ -1,5 +1,16 @@
 # Reproduction guide
 
+## Reproduce primary results from this public checkout
+
+Without obtaining any large raw archive, run from the repository root:
+
+```bash
+python 00_START_HERE/verify_public_graph_results.py
+```
+
+This verifies the reported primary paired means and the RQ2 change/win/loss/tie counts from the public graph-level and Kubernetes cell tables. The separate complete-release verifier documented below additionally checks original raw archives; it is not intended to run against the partial public checkout. Neither verifier reruns the simulator or independently recalculates every confidence interval.
+
+
 > **Public checkout status:** This guide describes the full independently verified offline reviewer archive. Original raw ZIP archives are **not yet deposited** in this public repository. Do not run the full-archive verifier against an incomplete checkout or interpret a missing-archive error as a failed experimental result.
 
 ## 1. Verify before analysis
