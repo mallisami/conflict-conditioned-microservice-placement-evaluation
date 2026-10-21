@@ -19,6 +19,16 @@ The study compares a conflict-conditioned complete-placement ranking policy (B5)
 
 **Begin with:** [`00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md`](00_START_HERE/EXPERIMENT_ARTIFACT_MAP.md) and [`00_START_HERE/REPRODUCTION_GUIDE.md`](00_START_HERE/REPRODUCTION_GUIDE.md).
 
+## Fast, public, data-light verification
+
+The public graph-level CSV tables are sufficient to independently recompute the primary **mean paired differences and the RQ2 selection/win-loss accounting**, without downloading the multi-gigabyte original packet logs.
+
+```bash
+python 00_START_HERE/verify_public_graph_results.py
+```
+
+This standard-library-only check covers 60 in-distribution and 60 shifted RQ1 graph identities, 200 RQ2 graph identities, the original 40-graph high-load Kubernetes panel, the separate 256-graph fresh panel, and the 128-graph matched-stabilizer contrast. It does **not** recompute bootstrap confidence intervals or establish simulator bit-level reproducibility; for those stronger claims, use the full evidence release and original protocols.
+
 ## Publication and verification scope
 
 This is a **publicly deposited subset** of the original verified reviewer archive. The ten original raw-study ZIP archives are **not in this repository**, and the public repository alone cannot perform the archive's complete raw-data integrity verification or independently reconstruct every original simulation. A public-subset checksum list is provided in [`PUBLIC_FILE_SHA256SUMS.txt`](PUBLIC_FILE_SHA256SUMS.txt), covering only the files actually deposited here. The original offline archive separately passed complete release-file hashes, ten study-archive checks, and 108,727 archived raw-record hashes. Those offline results must not be mistaken for a verifier pass of this partial public checkout.
