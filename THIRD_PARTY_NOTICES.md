@@ -2,7 +2,7 @@
 
 ## WiGig / ns-3 simulator
 
-The file `03_Code/01_Confirmatory_Engine/simulator/evaluate_shared_airtime_boundary.cc` preserves the original archived C++ simulation source, including the copyright and author notice:
+The files `03_Code/01_Confirmatory_Engine/simulator/evaluate_shared_airtime_boundary.cc` and `03_Code/02_RQ3_Fresh_Kubernetes_Extension/simulator/evaluate_shared_airtime_boundary.cc` preserve the same original archived C++ simulation source byte-for-byte, including the copyright and author notice. The second path is an exact mirror needed by the extension's local Stage-A self-test and run-provenance checks; it is not a separate or modified simulator implementation:
 
 - **Copyright:** 2015–2020 IMDEA Networks Institute
 - **Named author:** Hany Assasa

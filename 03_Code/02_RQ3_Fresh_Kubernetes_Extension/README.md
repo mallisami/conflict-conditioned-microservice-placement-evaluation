@@ -2,6 +2,9 @@
 
 This is the separately specified fresh-graph Kubernetes extension. Its `src/`, `config/`, `PRE_RUN_FREEZE/`, model locks, `benchmark/`, `simulator/`, and `stage_e_support/` retain the layout expected by the included code.
 
+The `simulator/evaluate_shared_airtime_boundary.cc` file is now included as a byte-for-byte mirror of the canonical source in `../01_Confirmatory_Engine/simulator/`. The Stage-A self-test and run provenance expect that local path. The mirror is not a new simulator implementation; its SHA-256 must remain `d8f262c864448cc6a9910d121d3cb9a46074c0d6264b5ce4c5a397d268b8913a`.
+
+
 The archived accepted records are stored in `04_Raw_Experimental_Data/10_Fresh_Kubernetes_RQ3.zip`. To restore the raw directory expected by analysis/rerun tools, run from the package root:
 
 ```bash
