@@ -10,11 +10,17 @@ permissions:
   contents: read
 
 jobs:
-  verify:
+  public-artifact-verification:
+    name: Public artifact integrity and result checks
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout research artifacts
         uses: actions/checkout@v4
+      - name: Select pinned Python runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
       - name: Check published file SHA-256 values and manifest coverage
         run: python3 verify_public_subset.py
       - name: Recompute primary graph-level results
@@ -23,5 +29,38 @@ jobs:
         run: python3 00_START_HERE/verify_public_supporting_results.py
       - name: Verify recovered frozen plans
         run: python3 00_START_HERE/verify_frozen_plan_archives.py
+      - name: Audit and guard the unresolved development gate
+        run: python3 00_START_HERE/audit_development_gate_disposition.py
       - name: Independent paired graph-bootstrap smoke test
         run: python3 00_START_HERE/recompute_public_bootstrap_cis.py --resamples 2000
+
+  offline-regression-tests:
+    name: Offline regression tests (${{ matrix.suite }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - suite: confirmatory-engine
+            working_directory: 03_Code/01_Confirmatory_Engine
+          - suite: fresh-kubernetes-extension
+            working_directory: 03_Code/02_RQ3_Fresh_Kubernetes_Extension
+    steps:
+      - name: Checkout research artifacts
+        uses: actions/checkout@v4
+      - name: Select pinned Python runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ${{ matrix.working_directory }}/requirements-lock.txt
+      - name: Install the repository's pinned offline-test dependencies
+        run: python -m pip install --disable-pip-version-check -r "${{ matrix.working_directory }}/requirements-lock.txt"
+      - name: Verify the fresh Kubernetes extension package manifest and frozen inputs
+        if: matrix.suite == 'fresh-kubernetes-extension'
+        working-directory: ${{ matrix.working_directory }}
+        run: python tools/verify_rq3_inputs.py
+      - name: Run unit and synthetic offline state-machine tests with a hard timeout
+        working-directory: ${{ matrix.working_directory }}
+        run: timeout --signal=TERM --kill-after=30s 12m python -m pytest -q tests

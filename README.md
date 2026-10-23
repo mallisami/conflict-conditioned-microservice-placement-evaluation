@@ -51,6 +51,13 @@ These are losslessly compressed *input plans*, not packet/oracle execution outco
 
 Graph identity is the independent analysis unit; original and post-confirmatory cohorts must not be pooled.
 
+## Current development-gate disposition (24 October 2026)
+
+The frozen B5 model lock retains its historical `development_gate.passed=true` field. **Do not interpret that field as current scientific sign-off.** Its selection criterion compares B5 near-margin regret with B4 strict-selection regret, which are different decision rules. The corrected retrospective audit reports B5 strict regret of 0.0018021 versus B4 strict regret of 0.0011209; the near-margin comparison points in the opposite direction, but was not nested independent validation. Ten dense N=8 oracle groups contribute approximately 99.44% of the pairwise subobjective's pre-loss weight mass, and the development builder did not define an explicit held-out traffic-family split.
+
+The historical lock is preserved unchanged. The current interpretation and remaining blockers are recorded in [the development-gate disposition](00_START_HERE/DEVELOPMENT_GATE_DISPOSITION_2026-10-24.md). Run `python3 00_START_HERE/audit_development_gate_disposition.py` to check the documented values and detect whether the missing historical B3 calibration file has appeared. This is an audit guard, not a scientific validation or a substitute for the full evidence package.
+
+
 ## Repository directory guide
 
 The numeric prefixes are **frozen artifact-directory names from the verified experiment package**, not public release version numbers. They are kept to preserve executable paths, provenance and references.

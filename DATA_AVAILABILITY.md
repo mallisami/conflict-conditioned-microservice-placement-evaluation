@@ -46,6 +46,12 @@ Total: **108,727 records** in approximately **8.96 GiB of study ZIPs**. Offline 
 - The original 40-graph Kubernetes study and fresh 256-graph post-confirmatory study are **separate** and must not be pooled.
 - No native TraDE/Diktyo scheduler performance trials, completed DeathStarBench execution, or concurrent physical 60-GHz radio validation are claimed.
 
+## Current development-gate disposition (24 October 2026)
+
+The historical B5 model lock's `development_gate.passed=true` field records the original gate only; it is not accepted here as current scientific sign-off. The gate mixes B5 near-margin regret with B4 strict regret. In the corrected retrospective summary, B5 strict regret is 0.0018020986 versus B4 strict regret 0.0011208595, while B5 near-margin regret is 0.0011250597 versus B4 near-margin regret 0.0012872232. Those opposite directions, the absence of nested cross-validation, the lack of an explicit held-out traffic-family split, and the dominance of ten dense N=8 oracle groups mean that neither comparison establishes confirmatory superiority. The original Stage-A B3 calibration CSV is still missing from this public checkout, so the historical B3 fit cannot be independently refitted from the public files.
+
+The frozen model lock and historical results are intentionally unchanged. See [the full disposition and repair plan](00_START_HERE/DEVELOPMENT_GATE_DISPOSITION_2026-10-24.md). The read-only guard `python3 00_START_HERE/audit_development_gate_disposition.py` verifies the published values and reports the gate as blocked until the original calibration input and supporting source material can be audited. A green integrity/CI check does **not** mean the scientific gate is closed.
+
 ## Third-party code and redistribution
 
 The exact frozen study file `03_Code/01_Confirmatory_Engine/simulator/evaluate_shared_airtime_boundary.cc` **is on GitHub** (it was incorrectly described as withheld in an older provenance note). The header attributes **IMDEA Networks Institute (2015–2020)** and **Hany Assasa**. It derives from the [WiGig/ns-3 module](https://github.com/wigig-tools/wigig-module/tree/v0.5), licensed under **GPL-2.0**. The [GPL license text](THIRD_PARTY_LICENSES/WIGIG_GPL-2.0.txt) and [third-party notice](THIRD_PARTY_NOTICES.md) are retained. The detailed historical modification lineage and all combined-code obligations have not been independently certified.
