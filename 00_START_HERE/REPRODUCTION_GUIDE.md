@@ -2,6 +2,9 @@
 
 This guide separates **quick verification of publicly deposited results** from **full offline-archive integrity** and **resource-intensive reruns**. Start from the repository root.
 
+> **Scientific status warning:** Public result checks validate selected recorded calculations; they do not validate the B5 development-selection procedure. Before interpreting B5, read [the development-gate disposition](DEVELOPMENT_GATE_DISPOSITION_2026-10-24.md) and run `python3 00_START_HERE/audit_development_gate_disposition.py`. The guard deliberately reports the scientific gate as blocked while the historical B3 calibration input and full source evidence remain unavailable.
+
+
 ## 1. Run the public result check (no large downloads)
 
 ```bash
