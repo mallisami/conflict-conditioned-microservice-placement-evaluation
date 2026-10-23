@@ -57,6 +57,10 @@ jobs:
           cache-dependency-path: ${{ matrix.working_directory }}/requirements-lock.txt
       - name: Install the repository's pinned offline-test dependencies
         run: python -m pip install --disable-pip-version-check -r "${{ matrix.working_directory }}/requirements-lock.txt"
+      - name: Verify the fresh Kubernetes extension package manifest and frozen inputs
+        if: matrix.suite == 'fresh-kubernetes-extension'
+        working-directory: ${{ matrix.working_directory }}
+        run: python tools/verify_rq3_inputs.py
       - name: Run unit and synthetic offline state-machine tests with a hard timeout
         working-directory: ${{ matrix.working_directory }}
         run: timeout --signal=TERM --kill-after=30s 12m python -m pytest -q tests
