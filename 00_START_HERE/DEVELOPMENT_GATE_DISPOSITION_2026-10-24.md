@@ -40,7 +40,7 @@ These are archived development-selection quantities, not confirmatory estimates.
 When the full package is supplied, the next audit must:
 
 1. Verify the package and original source archives against their existing SHA-256 records before extracting or changing anything.
-2. Locate and authenticate the original B3 Stage-A calibration CSV, its generation procedure, and its exact schema; independently refit B3 and compare the reconstructed coefficients and predictions with the frozen payload.
+2. Check the complete package for the original B3 Stage-A calibration CSV, its generation procedure, and exact schema. The existing release record says `calibration_aggregated.csv` was not recovered and remains unavailable even in the full offline archive. If that is still true, formally record the input as unrecoverable and narrow the reproducibility claim; do not reconstruct or fabricate missing calibration rows. Independently refit B3 only if an authenticated original input and its generation procedure are actually supplied.
 3. Recover the full development source wrappers and the original CV/selection scripts. Re-run the source audit from those inputs rather than treating retained H1B tables as a complete rerun.
 4. Define a grouped/nested development evaluation that keeps graph identities and relevant traffic families separated across folds; explicitly prevent dense-oracle groups from dominating the reported evidence without a justified, predeclared weighting rationale.
 5. Compare strict with strict and near-margin with near-margin on identical eligible graph-state groups. Predeclare the primary selection rule, the gate metric, the tolerance, and the failure decision before fitting or looking at new outcomes.
